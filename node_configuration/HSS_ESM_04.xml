@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmProfileContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmProfileContainerId>HSS-EsmProfileContainer</hss-EsmProfileContainerId>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>HSS-EsmDefaultAutomaticProfile</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943040</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971520</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>11</hss-EsmContextIdList>
+            <hss-EsmContextIdList>12</hss-EsmContextIdList>
+            <hss-EsmContextIdList>13</hss-EsmContextIdList>
+            <hss-EsmDefaultContextId>11</hss-EsmDefaultContextId>
+            <hss-EsmApnOiReplacement>mnc012.mcc345.gprs</hss-EsmApnOiReplacement>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>HSS-EsmProfile_Default</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943040</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971520</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>11</hss-EsmContextIdList>
+            <hss-EsmContextIdList>13</hss-EsmContextIdList>
+            <hss-EsmContextIdList>14</hss-EsmContextIdList>
+            <hss-EsmContextIdList>15</hss-EsmContextIdList>
+            <hss-EsmContextIdList>16</hss-EsmContextIdList>
+            <hss-EsmCoreNetworkRestrictions>0</hss-EsmCoreNetworkRestrictions>
+            <hss-EsmDefaultContextId>11</hss-EsmDefaultContextId>
+            <hss-EsmAddDefaultContextId>15</hss-EsmAddDefaultContextId>
+            <hss-EsmApnOiReplacement>mnc012.mcc345.gprs</hss-EsmApnOiReplacement>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>HSS-EsmProfile_Specific</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943040</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971520</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>11</hss-EsmContextIdList>
+            <hss-EsmDefaultContextId>11</hss-EsmDefaultContextId>
+            <hss-EsmApnOiReplacement>mnc012.mcc345.gprs</hss-EsmApnOiReplacement>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>PDPCP1</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>1</hss-EsmContextIdList>
+            <hss-EsmContextIdList>2</hss-EsmContextIdList>
+            <hss-EsmContextIdList>3</hss-EsmContextIdList>
+            <hss-EsmDefaultContextId>1</hss-EsmDefaultContextId>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>PRSR1</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>1</hss-EsmContextIdList>
+            <hss-EsmContextIdList>2</hss-EsmContextIdList>
+            <hss-EsmContextIdList>3</hss-EsmContextIdList>
+            <hss-EsmMappingContextIdList>11$1</hss-EsmMappingContextIdList>
+            <hss-EsmMappingContextIdList>22$2</hss-EsmMappingContextIdList>
+            <hss-EsmMappingContextIdList>33$3</hss-EsmMappingContextIdList>
+            <hss-EsmDefaultContextId>1</hss-EsmDefaultContextId>
+            <hss-EsmApnOiReplacement>mnc012.mcc345.gprs</hss-EsmApnOiReplacement>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>PRSR2</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>1</hss-EsmContextIdList>
+            <hss-EsmContextIdList>2</hss-EsmContextIdList>
+            <hss-EsmContextIdList>3</hss-EsmContextIdList>
+            <hss-EsmMappingContextIdList>11$1</hss-EsmMappingContextIdList>
+            <hss-EsmMappingContextIdList>22$2</hss-EsmMappingContextIdList>
+            <hss-EsmMappingContextIdList>33$3</hss-EsmMappingContextIdList>
+            <hss-EsmDefaultContextId>2</hss-EsmDefaultContextId>
+            <hss-EsmApnOiReplacement>mnc012.mcc345.gprs</hss-EsmApnOiReplacement>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+          </HSS-EsmProfile>
+          <HSS-EsmProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmProfileId>HSS-EsmProfile_MonteNidd</hss-EsmProfileId>
+            <hss-EsmAmbrMaxDl>41943040</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971520</hss-EsmAmbrMaxUl>
+            <hss-EsmContextIdList>11</hss-EsmContextIdList>
+            <hss-EsmContextIdList>17</hss-EsmContextIdList>
+            <hss-EsmContextIdList>18</hss-EsmContextIdList>
+            <hss-EsmContextIdList>19</hss-EsmContextIdList>
+            <hss-EsmContextIdList>20</hss-EsmContextIdList>
+            <hss-EsmDefaultContextId>11</hss-EsmDefaultContextId>
+            <hss-EsmRatFreqSelPriorId>1</hss-EsmRatFreqSelPriorId>
+            <hss-EsmSubscribedChargingChars>1</hss-EsmSubscribedChargingChars>
+          </HSS-EsmProfile>
+        </HSS-EsmProfileContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

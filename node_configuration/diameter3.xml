@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+    <applicationName>DIA</applicationName>
+    <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+      <stackContainerId>HSS_ISMSDA</stackContainerId>
+      <DIA-CFG-RoutingContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <routingContainerId>HSS_ISMSDA</routingContainerId>
+        <DIA-CFG-Drt xmlns="urn:com:ericsson:ecim:dia_mim">
+          <entryId>ericsson.se:HSS_ISMSDA:FALSE</entryId>
+          <DIA-CFG-AuthReqContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+            <authReqContainerName>authReqContainerName</authReqContainerName>
+            <DIA-CFG-AppRouting xmlns="urn:com:ericsson:ecim:dia_mim">
+              <requestedApp>10415:16777216</requestedApp>
+              <action>4</action>
+              <nodeIds>0:slf.ericsson.se#HSS_ISMSDA</nodeIds>
+            </DIA-CFG-AppRouting>
+            <DIA-CFG-AppRouting>
+              <requestedApp>10415:16777217</requestedApp>
+              <action>4</action>
+              <nodeIds>0:slf.ericsson.se#HSS_ISMSDA</nodeIds>
+            </DIA-CFG-AppRouting>
+            <DIA-CFG-AppRouting>
+              <requestedApp>10415:16777221</requestedApp>
+              <action>4</action>
+              <nodeIds>0:slf.ericsson.se#HSS_ISMSDA</nodeIds>
+            </DIA-CFG-AppRouting>
+          </DIA-CFG-AuthReqContainer>
+        </DIA-CFG-Drt>
+      </DIA-CFG-RoutingContainer>
+    </DIA-CFG-StackContainer>
+  </DIA-CFG-Application>
+</HSS-Function>
+</ManagedElement>

@@ -1,0 +1,129 @@
+#!/usr/bin/expect
+set REMOTE_TG [lindex $argv 0]
+set REMOTE_TG_1 [lindex $argv 1]
+set timeout 30
+set CERTIFICATE_PATH [lindex $argv 2]
+set CERTIFICATE_INSTALL_PATH /opt/hss/certificate
+ 
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $CERTIFICATE_PATH/udmCertificate.tar telorb@$REMOTE_TG_1:/tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$REMOTE_TG ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no telorb@$REMOTE_TG
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "telorb\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "telorb\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no telorb@$REMOTE_TG
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$REMOTE_TG ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no telorb@$REMOTE_TG
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "telorb\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "telorb\r"
+    }
+
+    timeout { exit 1 }
+}
+expect "*telorb@*" {
+    send "mkdir -p $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout mkdir\n"
+  exit 1
+}
+expect "*telorb@*" {
+    send "cd $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout cd\n"
+  exit 1
+}
+expect "*telorb@*" {
+   send "mv /tmp/udmCertificate.tar $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout when mv file\n"
+  exit 1
+}
+expect "*telorb@*" {
+   send "tar -xvf udmCertificate.tar \r"
+
+} timeout {
+  puts "timeout when untar \n"
+  exit 1
+}
+expect "*telorb@*" {
+   send "rm -rf udmCertificate.tar \r"
+
+} timeout {
+  puts "timeout when rm file\n"
+  exit 1
+}
+expect "*telorb@*" {
+   send "ll \r"
+
+} timeout {
+  puts "list certificate\n"
+  exit 1
+}
+
+expect "*telorb@*" {
+    send "exit\r"
+} timeout {
+
+    puts "timeout while exit TG \n"
+    exit 1
+}
+
+expect "logout*" {
+} timeout {
+
+    puts "timeout while exit TG \n"
+    exit 1
+}
+
+exit 0

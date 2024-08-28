@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmRoamingServiceAreaContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmRoamingServiceAreaContainerId>HSS-EsmRoamingServiceAreaContainer</hss-EsmRoamingServiceAreaContainerId>
+          <HSS-EsmRoamingServiceArea xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmRoamingServiceAreaId>10</hss-EsmRoamingServiceAreaId>
+          </HSS-EsmRoamingServiceArea>
+          <HSS-EsmRoamingServiceArea xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmRoamingServiceAreaId>20</hss-EsmRoamingServiceAreaId>
+               <hss-EsmDefinedAreaList>12$0$RSP=2</hss-EsmDefinedAreaList>
+               <hss-EsmNonDefinedArea>0</hss-EsmNonDefinedArea>
+               <hss-EsmNonDefAreaRsp>1</hss-EsmNonDefAreaRsp>
+          </HSS-EsmRoamingServiceArea>
+          <HSS-EsmRoamingServiceArea xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmRoamingServiceAreaId>30</hss-EsmRoamingServiceAreaId>
+               <hss-EsmDefinedAreaList>12$0$RSP=30</hss-EsmDefinedAreaList>
+               <hss-EsmNonDefinedArea>0</hss-EsmNonDefinedArea>
+               <hss-EsmNonDefAreaRsp>1</hss-EsmNonDefAreaRsp>
+          </HSS-EsmRoamingServiceArea>
+          <HSS-EsmRoamingServiceArea xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmRoamingServiceAreaId>40</hss-EsmRoamingServiceAreaId>
+               <hss-EsmDefinedAreaList>12$0$RSP=40</hss-EsmDefinedAreaList>
+               <hss-EsmNonDefinedArea>0</hss-EsmNonDefinedArea>
+               <hss-EsmNonDefAreaRsp>1</hss-EsmNonDefAreaRsp>
+          </HSS-EsmRoamingServiceArea>
+          <HSS-EsmRoamingServiceArea xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmRoamingServiceAreaId>50</hss-EsmRoamingServiceAreaId>
+               <hss-EsmDefinedAreaList>12$0$RSP=50</hss-EsmDefinedAreaList>
+               <hss-EsmNonDefinedArea>0</hss-EsmNonDefinedArea>
+               <hss-EsmNonDefAreaRsp>1</hss-EsmNonDefAreaRsp>
+          </HSS-EsmRoamingServiceArea>
+        </HSS-EsmRoamingServiceAreaContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

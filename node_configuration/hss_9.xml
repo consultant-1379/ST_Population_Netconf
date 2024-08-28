@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-Common xmlns="urn:com:ericsson:ecim:CommonMOM">
+      <applicationName>HSS_Common</applicationName>
+      <HSS-CommonConfigurationContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+        <hss-CommonConfigurationContainerId>HSS-CommonConfigurationContainer</hss-CommonConfigurationContainerId>
+        <HSS-CommonServicesSupportContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+          <hss-CommonServicesSupportContainerId>HSS-CommonServicesSupportContainer</hss-CommonServicesSupportContainerId>
+          <HSS-ExtDbNotifInfoSupport xmlns="urn:com:ericsson:ecim:CommonMOM">
+            <hss-ExtDbNotifInfoSupportId>HSS-ExtDbNotifInfoSupport</hss-ExtDbNotifInfoSupportId>
+              <hss-ExtDbNotificationsPerSecondPerProc>100</hss-ExtDbNotificationsPerSecondPerProc>
+              <hss-ExtDbNotificationsTotalProcesses>10</hss-ExtDbNotificationsTotalProcesses>
+          </HSS-ExtDbNotifInfoSupport>
+        </HSS-CommonServicesSupportContainer>
+      </HSS-CommonConfigurationContainer>
+    </HSS-Common>
+  </HSS-Function>
+</ManagedElement>

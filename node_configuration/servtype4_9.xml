@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+    <applicationName>HSS_ISMSDA</applicationName>
+    <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+      <HSS-ServiceTypeContainer>
+        <hss-ServiceTypeContainerId>HSS-ServiceTypeContainer</hss-ServiceTypeContainerId>
+        <HSS-ServiceType>
+          <hss-ServiceTypeId>IP-TV</hss-ServiceTypeId>
+          <HSS-ServiceTrigger>
+            <hss-TriggerPriorityId>909</hss-TriggerPriorityId>
+            <HSS-SptGroup>
+              <hss-SptGroupId>3</hss-SptGroupId>
+              <hss-SipMethod>FALSE:INVITE</hss-SipMethod>
+            </HSS-SptGroup>
+          </HSS-ServiceTrigger>
+        </HSS-ServiceType>
+      </HSS-ServiceTypeContainer>
+    </HSS-ConfigurationContainer>
+  </HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

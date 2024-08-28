@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+
+<DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim"><applicationName>DIA</applicationName>
+
+<DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim"><stackContainerId>HSS_SM</stackContainerId>
+
+<DIA-CFG-OwnNodeConfig xmlns="urn:com:ericsson:ecim:dia_mim"><stackId>HSS_SM</stackId>
+
+<realm>ericsson.se</realm>
+
+<portNr>3869</portNr>
+
+<supportedVendorsIds>193</supportedVendorsIds>
+
+<supportedVendorSpecificApps>0:193:16777227:0</supportedVendorSpecificApps>
+
+<hostId>msi.ericsson.se</hostId>
+
+<productName>Ericsson Diameter</productName>
+
+<diaVendorId>193</diaVendorId>
+
+<disconnectCause>0</disconnectCause>
+
+<ipAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_TCP</ipAddressesList>
+
+<enabled>true</enabled>
+
+<allowConnectFromUnknownNode>true</allowConnectFromUnknownNode>
+
+<watchdogTimeIdle>6</watchdogTimeIdle>
+
+<maxNumberOfRetries>0</maxNumberOfRetries>
+
+<firmwareRevision>1</firmwareRevision>
+
+<tcTimer>10</tcTimer>
+
+<loadRegulationEnabled>true</loadRegulationEnabled>
+
+<sendErrorAtOverload>true</sendErrorAtOverload>
+
+<transportLayerType>1</transportLayerType>
+
+</DIA-CFG-OwnNodeConfig>
+
+</DIA-CFG-StackContainer>
+
+</DIA-CFG-Application>
+
+</HSS-Function>
+
+</ManagedElement>
+
+

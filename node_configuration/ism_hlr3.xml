@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:FunctionMOM"><applicationName>HSS_FUNCTION</applicationName>
+<HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><applicationName>HSS_ISMSDA</applicationName>
+<HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+<HSS-RoamingConfiguration xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-RoamingConfigId>HSS-RoamingConfiguration</hss-RoamingConfigId>
+<HSS-GprsLocationAreaInfo xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-GprsLocationAreaId>461</hss-GprsLocationAreaId>
+<hss-IsHomeArea>false</hss-IsHomeArea>
+<hss-MccMnc>012345</hss-MccMnc>
+</HSS-GprsLocationAreaInfo>
+</HSS-RoamingConfiguration>
+</HSS-ConfigurationContainer>
+</HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

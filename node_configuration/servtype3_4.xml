@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+    <applicationName>HSS_ISMSDA</applicationName>
+    <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+      <HSS-ServiceTypeContainer>
+        <hss-ServiceTypeContainerId>HSS-ServiceTypeContainer</hss-ServiceTypeContainerId>
+        <HSS-ServiceType>
+          <hss-ServiceTypeId>Presence</hss-ServiceTypeId>
+          <HSS-ServiceProfile xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ServiceProfileId>PRESENCE</hss-ServiceProfileId>
+            <hss-DsaiCapability>true</hss-DsaiCapability>
+            <hss-DefaultApplicationServer>sip:ap5.ericsson.se;lr</hss-DefaultApplicationServer>
+            <hss-Trigger2ApplicationServers>801:sip\:ap5.ericsson.se;lr;call=orig;transport=tcp:</hss-Trigger2ApplicationServers>
+            <hss-Trigger2ApplicationServers>803:sip\:ap5.ericsson.se;lr;call=orig;transport=tcp:</hss-Trigger2ApplicationServers>
+            <hss-Trigger2ApplicationServers>805:sip\:ap5.ericsson.se;lr;call=term_registered;transport=tcp:</hss-Trigger2ApplicationServers>
+            <hss-Trigger2ApplicationServers>807:sip\:ap5.ericsson.se;lr;call=term_unregistered;transport=tcp:</hss-Trigger2ApplicationServers>
+            <hss-Trigger2ApplicationServers>809:sip\:ap5.ericsson.se;lr;call=orig;transport=tcp:</hss-Trigger2ApplicationServers>
+            <hss-Trigger2ApplicationServers>811:sip\:ap5.ericsson.se;lr;call=orig;transport=tcp:</hss-Trigger2ApplicationServers>
+          </HSS-ServiceProfile>
+        </HSS-ServiceType>
+      </HSS-ServiceTypeContainer>
+    </HSS-ConfigurationContainer>
+  </HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<SystemFunctions xmlns="urn:com:ericsson:ecim:ComTop"><systemFunctionsId>1</systemFunctionsId>
+<SecM xmlns="urn:com:ericsson:ecim:ComSecM"><secMId>1</secMId>
+<UserManagement xmlns="urn:com:ericsson:ecim:ComSecM"><userManagementId>1</userManagementId>
+<LdapAuthenticationMethod xmlns="urn:com:ericsson:ecim:ComLdapAuthentication"><ldapAuthenticationMethodId>1</ldapAuthenticationMethodId>
+<administrativeState>UNLOCKED</administrativeState>
+</LdapAuthenticationMethod>
+</UserManagement>
+</SecM>
+</SystemFunctions>
+</ManagedElement>

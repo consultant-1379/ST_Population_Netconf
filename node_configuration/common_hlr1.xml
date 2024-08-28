@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:FunctionMOM"><applicationName>HSS_FUNCTION</applicationName>
+<HSS-Common xmlns="urn:com:ericsson:ecim:CommonMOM"><applicationName>HSS_Common</applicationName>
+<HSS-CommonConfigurationContainer xmlns="urn:com:ericsson:ecim:CommonMOM"><hss-CommonConfigurationContainerId>HSS-CommonConfigurationContainer</hss-CommonConfigurationContainerId>
+<HSS-FeatureAdmActivation xmlns="urn:com:ericsson:ecim:CommonMOM"><hss-FeatureAdmActivationId>HSS-FeatureAdmActivation</hss-FeatureAdmActivationId>
+<hss-ImpEpcProvAdmState>Enabled</hss-ImpEpcProvAdmState>
+</HSS-FeatureAdmActivation>
+</HSS-CommonConfigurationContainer>
+</HSS-Common>
+</HSS-Function>
+</ManagedElement>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+    <applicationName>HSS_ISMSDA</applicationName>
+    <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+      <HSS-ServiceTypeContainer>
+        <hss-ServiceTypeContainerId>HSS-ServiceTypeContainer</hss-ServiceTypeContainerId>
+        <HSS-ServiceType>
+          <hss-ServiceTypeId>Presence</hss-ServiceTypeId>
+          <HSS-ServiceTrigger>
+            <hss-TriggerPriorityId>811</hss-TriggerPriorityId>
+            <hss-TriggerDescription>User subscribing to own RLS Services list (PSI)</hss-TriggerDescription>
+            <hss-IsActive>true</hss-IsActive>
+            <hss-TriggerType>ORIGINATING</hss-TriggerType>
+            <hss-DetectionPoint>SUBSCRIBE</hss-DetectionPoint>
+            <hss-NegatedDetectionPoint>false</hss-NegatedDetectionPoint>
+            <hss-ConditionType>AND</hss-ConditionType>
+            <hss-RequestedURI>/^.*;list=/i</hss-RequestedURI>
+            <hss-NegatedRequestedURI>false</hss-NegatedRequestedURI>
+            <hss-SIPHeaders>FALSE:Event:/presence/i</hss-SIPHeaders>
+            <hss-SIPHeaders>FALSE:Supported:/eventlist/i</hss-SIPHeaders>
+          </HSS-ServiceTrigger>
+        </HSS-ServiceType>
+      </HSS-ServiceTypeContainer>
+    </HSS-ConfigurationContainer>
+  </HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+      <applicationName>DIA</applicationName>
+      <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <stackContainerId>HSS_ESM</stackContainerId>
+        <!--DIA-CFG-PeerNodeContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+          <peerNodeContainerId>HSS_ESM</peerNodeContainerId>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>slf.ericsson.se\23HSS_ESM</nodeId>
+            <enabled>true</enabled>
+            <initiateConnection>false</initiateConnection>
+          </DIA-CFG-NeighbourNode>
+        </DIA-CFG-PeerNodeContainer-->
+        <DIA-CFG-RoutingContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+          <routingContainerId>HSS_ESM</routingContainerId>
+          <DIA-CFG-Drt xmlns="urn:com:ericsson:ecim:dia_mim">
+            <entryId>ericsson.se:HSS_ESM:FALSE</entryId>
+          </DIA-CFG-Drt>
+        </DIA-CFG-RoutingContainer>
+      </DIA-CFG-StackContainer>
+    </DIA-CFG-Application>
+  </HSS-Function>
+</ManagedElement>

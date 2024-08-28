@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-Common xmlns="urn:com:ericsson:ecim:CommonMOM">
+      <applicationName>HSS_Common</applicationName>
+      <HSS-CommonConfigurationContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+        <hss-CommonConfigurationContainerId>HSS-CommonConfigurationContainer</hss-CommonConfigurationContainerId>
+          <HSS-ImplicitVolteTrigger xmlns="urn:com:ericsson:ecim:CommonMOM">
+            <hss-ImplicitVolteTriggerId>HSS-ImplicitVolteTrigger</hss-ImplicitVolteTriggerId>
+            <HSS-ImplicitVolteTriggerImsUnknownUser xmlns="urn:com:ericsson:ecim:CommonMOM">
+              <hss-ImpVolteTriggerImsUnknownUserId>ImsUnknownUser</hss-ImpVolteTriggerImsUnknownUserId>
+              <hss-TriggerIsActive>true</hss-TriggerIsActive>
+            </HSS-ImplicitVolteTriggerImsUnknownUser>
+            <HSS-ImplicitVolteTriggerSrvccCapableTerminal xmlns="urn:com:ericsson:ecim:CommonMOM">
+              <hss-ImplicitVolteTriggerSrvccCapableTerminalId>SrvccCapableTerminal</hss-ImplicitVolteTriggerSrvccCapableTerminalId>
+              <hss-TriggerIsActive>true</hss-TriggerIsActive>
+            </HSS-ImplicitVolteTriggerSrvccCapableTerminal>
+          </HSS-ImplicitVolteTrigger>
+      </HSS-CommonConfigurationContainer>
+    </HSS-Common>
+  </HSS-Function>
+</ManagedElement>
+
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+
+<RAD-Application xmlns="urn:com:ericsson:ecim:hss_radius_mim"><applicationName>RADIUS</applicationName>
+
+<RAD-AppInstance xmlns="urn:com:ericsson:ecim:hss_radius_mim"><rad-ApplicationName>HSS_SM</rad-ApplicationName>
+
+<rad-IpAddress>OWN_NODE_CONFIG_IP_ADDR_LIST_TCP</rad-IpAddress>
+
+</RAD-AppInstance>
+
+</RAD-Application>
+
+</HSS-Function>
+
+</ManagedElement>
+
+

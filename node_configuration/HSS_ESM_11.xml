@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmRoamingServiceRestrictionProfileContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmRoamingServiceRestrictionProfileContainerId>HSS-EsmRoamingServiceRestrictionProfileContainer</hss-EsmRoamingServiceRestrictionProfileContainerId>
+          <HSS-EsmRoamingServiceRestrictionProfile>
+            <hss-EsmRoamingServiceRestrictionProfileId>1</hss-EsmRoamingServiceRestrictionProfileId>
+               <hss-EsmRestrictedSrvcc>false</hss-EsmRestrictedSrvcc>
+          </HSS-EsmRoamingServiceRestrictionProfile>
+          <HSS-EsmRoamingServiceRestrictionProfile>
+             <hss-EsmRoamingServiceRestrictionProfileId>2</hss-EsmRoamingServiceRestrictionProfileId>
+               <hss-EsmRestrictedSrvcc>true</hss-EsmRestrictedSrvcc>
+          </HSS-EsmRoamingServiceRestrictionProfile>
+          <HSS-EsmRoamingServiceRestrictionProfile>
+             <hss-EsmRoamingServiceRestrictionProfileId>30</hss-EsmRoamingServiceRestrictionProfileId>
+               <hss-EsmRestrictedSrvcc>false</hss-EsmRestrictedSrvcc>
+               <hss-EsmRestrictedApnIdList>2</hss-EsmRestrictedApnIdList>
+               <hss-EsmRestrictedApnIdList>3</hss-EsmRestrictedApnIdList>
+          </HSS-EsmRoamingServiceRestrictionProfile>
+          <HSS-EsmRoamingServiceRestrictionProfile>
+             <hss-EsmRoamingServiceRestrictionProfileId>40</hss-EsmRoamingServiceRestrictionProfileId>
+               <hss-EsmRestrictedSrvcc>false</hss-EsmRestrictedSrvcc>
+               <hss-EsmRestrictedApnIdList>1</hss-EsmRestrictedApnIdList>
+          </HSS-EsmRoamingServiceRestrictionProfile>
+          <HSS-EsmRoamingServiceRestrictionProfile>
+             <hss-EsmRoamingServiceRestrictionProfileId>50</hss-EsmRoamingServiceRestrictionProfileId>
+               <hss-EsmRestrictedSrvcc>false</hss-EsmRestrictedSrvcc>
+               <hss-EsmRestrictedApnIdList>2</hss-EsmRestrictedApnIdList>
+          </HSS-EsmRoamingServiceRestrictionProfile>
+        </HSS-EsmRoamingServiceRestrictionProfileContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

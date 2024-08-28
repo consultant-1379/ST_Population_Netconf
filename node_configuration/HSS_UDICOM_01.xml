@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HTTP-Application xmlns="urn:com:ericsson:ecim:http_mim">
+      <applicationName>HTTP</applicationName>
+      <HTTP-OwnServiceConfig xmlns="urn:com:ericsson:ecim:http_mim">
+        <ownServiceId>UDICOM</ownServiceId>
+          <ipAddress>UDM_IP_ON_HSS</ipAddress>
+          <hssInstId>54804518-4191-46b3-955c-ac631f953ed8</hssInstId>
+          <port>CLEARTEXT_PORT</port>
+          <tlsPort>TLS_PORT</tlsPort>
+          <tlsMode>TLS_MODE</tlsMode>
+        </HTTP-OwnServiceConfig>
+      </HTTP-Application>
+  </HSS-Function>
+</ManagedElement>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <applicationName>HSS_ISMSDA</applicationName>
+      <HSS-License xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+        <hss-LicenseId>HSS-License</hss-LicenseId>
+        <hss-IsmIsActive>true</hss-IsmIsActive>
+        <hss-SdaIsActive>true</hss-SdaIsActive>
+      </HSS-License>
+    </HSS-IsmSdaApplication>
+  </HSS-Function>
+</ManagedElement>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-Common xmlns="urn:com:ericsson:ecim:CommonMOM">
+      <applicationName>HSS_Common</applicationName>
+      <HSS-CommonConfigurationContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+        <hss-CommonConfigurationContainerId>HSS-CommonConfigurationContainer</hss-CommonConfigurationContainerId>
+        <HSS-CommonServicesSupportContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+          <hss-CommonServicesSupportContainerId>HSS-CommonServicesSupportContainer</hss-CommonServicesSupportContainerId>
+          <HSS-CommonIMSISeriesContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+            <hss-CommonIMSISeriesContainerId>HSS-CommonIMSISeriesContainer</hss-CommonIMSISeriesContainerId>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001101</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001103</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001105</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001107</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001109</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001121</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001123</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001125</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001127</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>2622800001129</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000761</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000763</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000765</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000767</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000769</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+			  <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000771</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>262280000773</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>300001010101</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>300001010102</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>300001010103</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>300001010104</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>300001010105</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>3001010105</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+              <HSS-CommonIMSISeries xmlns="urn:com:ericsson:ecim:CommonMOM">
+                <hss-IMSISeriesAuthenticationVectorSupplierARPF>3000010105</hss-IMSISeriesAuthenticationVectorSupplierARPF>
+              </HSS-CommonIMSISeries>
+            </HSS-CommonIMSISeriesContainer>
+          <HSS-CommonServicesSupport xmlns="urn:com:ericsson:ecim:CommonMOM">
+            <hss-CommonServicesSupportId>HSS-CommonServicesSupport</hss-CommonServicesSupportId>
+            <hss-CommonAuthenticationVectorSupplier>ARPFforDefinedIMSISeriesIMSIMask</hss-CommonAuthenticationVectorSupplier>
+          </HSS-CommonServicesSupport>
+        </HSS-CommonServicesSupportContainer>
+      </HSS-CommonConfigurationContainer>
+    </HSS-Common>
+  </HSS-Function>
+</ManagedElement>

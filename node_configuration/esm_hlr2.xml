@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:FunctionMOM"><applicationName>HSS_FUNCTION</applicationName>
+<HSS-EsmApplication xmlns="urn:com:ericsson:ecim:EsmMOM"><applicationName>HSS_ESM</applicationName>
+<HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:EsmMOM"><hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+<HSS-EsmServicesSupportContainer xmlns="urn:com:ericsson:ecim:EsmMOM"><hss-EsmServicesSupportContainerId>HSS-EsmServicesSupportContainer</hss-EsmServicesSupportContainerId>
+<HSS-EsmInstallationSupport xmlns="urn:com:ericsson:ecim:EsmMOM"><hss-EsmInstallationSupportId>HSS-EsmInstallationSupport</hss-EsmInstallationSupportId>
+<hss-EsmAuthenticationVectorSupplier>HLR</hss-EsmAuthenticationVectorSupplier>
+</HSS-EsmInstallationSupport>
+</HSS-EsmServicesSupportContainer>
+</HSS-EsmConfigurationContainer>
+</HSS-EsmApplication>
+</HSS-Function>
+</ManagedElement>

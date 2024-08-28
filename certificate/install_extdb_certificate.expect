@@ -1,0 +1,219 @@
+#!/usr/bin/expect
+set EXTDB [lindex $argv 0]
+set timeout 30
+set mode [lindex $argv 1]
+set CERTIFICATE_PATH [lindex $argv 2]
+set CERTIFICATE_INSTALL_PATH /etc/openldap/certs
+ 
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $CERTIFICATE_PATH/extdbCertificate.tar telorb@$EXTDB:/tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$EXTDB ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no terlorb@$EXTDB
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "telorb\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "telorb\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no telorb@$EXTDB
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$EXTDB ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no telorb@$EXTDB
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "telorb\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "telorb\r"
+    }
+
+    timeout { exit 1 }
+}
+
+expect "*telorb@*" {
+    send "sudo -i \r"
+
+} timeout {
+  puts "timeout sudo to root\n"
+  exit 1
+}
+
+expect "*:~ #*" {
+    send "mkdir -p $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout mkdir\n"
+  exit 1
+}
+
+expect "*:~ #*" {
+    send "cd $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout cd\n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "mv /tmp/extdbCertificate.tar $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout when mv file\n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "tar -xvf extdbCertificate.tar \r"
+
+} timeout {
+  puts "timeout when untar \n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "rm -rf extdbCertificate.tar \r"
+
+} timeout {
+  puts "timeout when rm file\n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "chown root CAldapscert.key \r"
+   send "chown root CAldapscert.pem \r"
+   send "chown root extdb.crt \r"
+   send "chown root extdb.key \r"
+   send "chown root config_tlsmode1.sh \r"
+   send "chown root config_tlsmode2.sh \r"
+   sleep 1
+
+} timeout {
+  puts "timeout when chown \n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "chgrp root CAldapscert.key \r"
+   send "chgrp root CAldapscert.pem \r"
+   send "chgrp root extdb.crt \r"
+   send "chgrp root extdb.key \r"
+   send "chgrp root config_tlsmode1.sh \r"
+   send "chgrp root config_tlsmode2.sh \r"
+   sleep 1 
+
+} timeout {
+  puts "timeout when chgrp \n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "ll \r"
+
+} timeout {
+  puts "list certificate\n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+    send "find /etc/sysconfig -name openldap|xargs sed -i \'s/^OPENLDAP_START_LDAPS.*/OPENLDAP_START_LDAPS=\"yes\"/g\'\r"
+
+} timeout {
+  puts "timeout while update openldap \n"
+  exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+   send "find /etc/openldap -name slapd.conf|xargs sed -i \"s/^TLSCertificateFile.*/TLSCertificateFile    \\/etc\\/openldap\\/certs\\/extdb.crt/g\"\r"
+   send "find /etc/openldap -name slapd.conf|xargs sed -i \"s/^TLSCACertificateFile.*/TLSCACertificateFile  \\/etc\\/openldap\\/certs\\/CAldapscert.pem/g\"\r"
+   send "find /etc/openldap -name slapd.conf|xargs sed -i \"s/^TLSCertificateKeyFile.*/TLSCertificateKeyFile \\/etc\\/openldap\\/certs\\/extdb.key/g\"\r"
+   sleep 1
+
+} timeout {
+   puts "timeout while update slapd.conf \n"
+   exit 1
+}
+
+if { $mode == "1" } {
+expect "*:/etc/openldap/certs #*" {
+   send "./test_tlsmode1.sh\r"
+
+  } timeout {
+   puts "timeout while update TLSVerifyClient \n"
+   exit 1
+ }
+}
+
+if { $mode == "2" } {
+expect "*:/etc/openldap/certs #*" {
+  send "./test_tlsmode2.sh\r"
+
+  } timeout {
+   puts "timeout while update TLSVerifyClient \n"
+   exit 1
+ }
+}
+
+
+expect "*:/etc/openldap/certs #*" {
+    send "systemctl restart slapd\r"
+
+} timeout {
+    puts "timeout while restart OpenLDAP Server Daemon \n"
+    exit 1
+}
+
+expect "*:/etc/openldap/certs #*" {
+    send "exit\r"
+
+} timeout {
+    puts "timeout while exit sudo root \n"
+    exit 1
+}
+
+expect "logout*" {
+} timeout {
+
+    puts "timeout while exit EXTDB \n"
+    exit 1
+}
+
+exit 0

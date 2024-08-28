@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+    <applicationName>DIA</applicationName>
+    <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+      <stackContainerId>HSS_ISMSDA</stackContainerId>
+      <DIA-CFG-PeerNodeContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <peerNodeContainerId>HSS_ISMSDA</peerNodeContainerId>
+        <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+          <nodeId>Origin0.ericsson.se\23HSS_ISMSDA</nodeId>
+          <!--
+<ipAddressesList>0:10.95.82.35</ipAddressesList>
+<enabled>true</enabled>
+<initiateConnection>false</initiateConnection>
+<portNr>3868</portNr>
+<transportLayerType>0</transportLayerType>
+<traceSctpHandler>DEFAULT</traceSctpHandler>
+<sctpHandlerLogLevel>DEFAULT</sctpHandlerLogLevel>
+<isIPv6Supported>true</isIPv6Supported>
+-->
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin0.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+        <DIA-CFG-NeighbourNode>
+          <nodeId>Origin1.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin1.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+        <DIA-CFG-NeighbourNode>
+          <nodeId>Origin2.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin2.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+        <DIA-CFG-NeighbourNode>
+          <nodeId>Origin3.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23Origin3.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+       <DIA-CFG-NeighbourNode>
+          <nodeId>ap5.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap5.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+       <DIA-CFG-NeighbourNode>
+          <nodeId>ap6.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap6.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+
+       <DIA-CFG-NeighbourNode>
+          <nodeId>ap7.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23ap7.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+       <DIA-CFG-NeighbourNode>
+          <nodeId>S-CSCF280.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF280.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+       <DIA-CFG-NeighbourNode>
+          <nodeId>S-CSCF290.ericsson.se\23HSS_ISMSDA</nodeId>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn10</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn1</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn2</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn3</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn4</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn5</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn6</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn7</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn8</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+          <DIA-CFG-Conn xmlns="urn:com:ericsson:ecim:dia_mim">
+            <connId>HSS_ISMSDA\23S-CSCF290.ericsson.se\23conn9</connId>
+            <enabled>true</enabled>
+          </DIA-CFG-Conn>
+        </DIA-CFG-NeighbourNode>
+      </DIA-CFG-PeerNodeContainer>
+    </DIA-CFG-StackContainer>
+  </DIA-CFG-Application>
+</HSS-Function>
+</ManagedElement>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+      <applicationName>DIA</applicationName>
+      <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <stackContainerId>HSS_ESM</stackContainerId>
+        <DIA-CFG-OwnNodeConfig xmlns="urn:com:ericsson:ecim:dia_mim">
+          <stackId>HSS_ESM</stackId>
+          <hostId>esm.ericsson.se</hostId>
+          <portNr>3870</portNr>
+          <productName>Ericsson Diameter</productName>
+          <realm>ericsson.se</realm>
+          <allowConnectFromUnknownNode>true</allowConnectFromUnknownNode>
+          <diaVendorId>10415</diaVendorId>
+          <disconnectCause>0</disconnectCause>
+          <enabled>true</enabled>
+          <firmwareRevision>1</firmwareRevision>
+          <ipAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_TCP</ipAddressesList>
+          <loadRegulationEnabled>true</loadRegulationEnabled>
+          <maxNumberOfRetries>0</maxNumberOfRetries>
+          <maxRequestPendingTime>15</maxRequestPendingTime>
+          <sctpAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_SCTP</sctpAddressesList>
+          <sendErrorAtOverload>true</sendErrorAtOverload>
+          <supportedVendorsIds>10415</supportedVendorsIds>
+           <supportedVendorSpecificApps>0:10415:16777251:0</supportedVendorSpecificApps>
+           <supportedVendorSpecificApps>1:10415:16777265:0</supportedVendorSpecificApps>
+           <supportedVendorSpecificApps>2:10415:16777291:0</supportedVendorSpecificApps>
+	   <supportedVendorSpecificApps>3:10415:16777345:0</supportedVendorSpecificApps>
+	   <supportedVendorSpecificApps>4:10415:16777310:0</supportedVendorSpecificApps>
+          <tcTimer>10</tcTimer>
+          <transportLayerType>3</transportLayerType>
+          <watchdogTimeIdle>6</watchdogTimeIdle>
+        </DIA-CFG-OwnNodeConfig>
+      </DIA-CFG-StackContainer>
+    </DIA-CFG-Application>
+  </HSS-Function>
+</ManagedElement>

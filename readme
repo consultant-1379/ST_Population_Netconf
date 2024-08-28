@@ -1,0 +1,194 @@
+This tool use NETCONF to configure HSS in CBA.
+
+Prerequest:
+HSS must be installed and licensed first.
+
+Note:This script includes active ISM, SDA, ESM and AVG already. It is not possible to populate ESM / AVG only due to an erro in the HSS installer process. All modules must be activated.
+   
+Start:
+1. Use get_env_info command in your traffic generator for the printout of your environment configuration
+- It will look similar to:
+
+***** ENV INFO *****
+Name: 
+	vHSSENV_CLOUD_PODB_VNF19
+
+Active generators: 
+	seliics00229
+
+Cabinets:
+	Name:        hss_vnf_small
+	Type:        VNF
+	SC-1:        10.0.39.36
+	SC-2:        10.0.39.37
+	OAM:         10.0.32.82
+	RADDIA:      10.0.64.90
+	DIASCTP:     10.0.70.90
+	LDAP:        10.196.136.82
+	SCXB:        10.0.58.68
+	OwnGTAdd:    35191112190
+
+ExtDb:
+	Name:   seliics00230
+	Type:   GTLA
+	OAM:    10.82.224.49
+	LDAP:   10.82.232.49
+
+Dummynets:
+
+***** END ENV INFO *****
+
+2. Configuration file is ism_sda_node.data
+- Edit this file according to your preferences and/or environment settings, see above
+- There are some default values stored but you can change them according to rules detailed in points 4.-7.
+
+3. Launch ./run_configure.sh 
+- without any optional parameter
+- all option parameters previously existing have been moved to ism_sda_node.data
+
+6. Activate A&A feature <ACTIVATE_AUTH_FEAT> will only be valid before 1.28.2 release
+- set this attribute to true if user wants to activate the A&A Feature
+- normally this happens during maiden installation only (once a time), so far the value is set to FALSE by default.
+- this task is executed with root credentials at the beginning of the population 
+
+7. User type <USER_TYPE> is only valid before 1.28.2 release. For release equal or after 1.28.2, since root can not access to CLISS, hssadministrator is used by dafault when CUSTOM_USER is FALSE.
+- set this attribute to use root or hssadministrator credentials for the population, according to your cabinets settings
+- if root:
+   USERCOMMON=root
+   USERLICENSE=root
+   USERAVG=root
+   PASSWD=rootroot
+   
+-if hssadministrator:
+   USERCOMEMERGENCY=com-emergency
+   USERCOMMON=hssadministrator
+   USERLICENSE=ericssonhsssupport
+   USERAVG=hssavgkeyadministrator
+   USEREVIP=SystemAdministrator
+   COMEMERGENCYPASSWD=com-emergency
+   COMMONPASSWD=hsstest
+   LICENSEPASSWD=hsstest
+   AVGPASSWD=hsstest
+   EVIPPASSWD=hsstest
+   
+   If CUSTOM_USER is TRUE, values of the following parameters need be provided for the customization purpose,user must manually edit data file and put passwords correctly.
+  USERCOMEMERGENCY=USERCOMEMERGENCY
+  COMEMERGENCYPASSWD=COMEMERGENCYPASSWD
+  USERCOMMON=USERCOMMON
+  COMMONPASSWD=COMMONPASSWD
+  USERLICENSE=USERLICENSE
+  LICENSEPASSWD=LICENSEPASSWD
+  USERAVG=USERAVG
+  AVGPASSWD=AVGPASSWD
+  USEREVIP=USEREVIP
+  EVIPPASSWD=EVIPPASSWD
+ 
+8. Repopulation <RE_POPULATION>
+- Due to repopulation (after upgrades) is more frequent than maiden installation this attribute is set to TRUE by default
+- change it if needed
+- if RE_POPULATION = TRUE:
+    Then AVG key settings will be executed
+- For maiden installation,RE_POPULATION must set as FALSE
+
+9. External Database credentials
+- DN_EXTDBURLCONFIGLIST and PASSWORD_EXTDB attributes' values are the same for GTLA and for CUDB. No difference.
+
+10. Debugging
+- for debugging please use one of the following methods (where -x is the debug mode and -v is the verbose mode):
+bash -x run_configure.sh
+bash -xv run_configure.sh
+
+11. Diameter peer nodes population <DIA_PEER_NODES>
+- if TRUE, all the peer nodes will be populated
+- if FALSE, only mandatory peer nodes will be populated
+
+12. Base vector supplier <BASE_VECTOR_SUPPLIER>
+- Vector supplier already configured in the environment. If it's the first population, leave it empty
+
+13. Vector previoulsy configured <VECTOR_PREV_CONFIGURED>
+- for avoiding some errors when repopulating some attributes which are write-once, for example
+- if VECTOR_PREV_CONFIGURED=TRUE
+    HLR/AVG has been previously configured in the environment, so this attributes won't be populated
+- if VECTOR_PREV_CONFIGURED=FALSE
+    HLR/AVG hasn't been previoulsy configured in the environment, so this attributes will be populated
+- if you're not sure, the recommendation is to set VECTOR_PREV_CONFIGURED=FALSE, since it will be provoke some error logs but nothing else 
+
+14. By default,LDAP_IPADDRESS=10.198.22.203, otherwise special LDAP_ADDRESS will be defined here. 
+
+15. UDM SERVER URI (After HSS version 1.39, UDM SERVER URI related parameters are deleted)
+- HTTP_URI_LIST_IPV4
+    Only defined as <TG_BOND105_ip>:<port> for primary URI, <TG_BOND105_ip> is the ip address of bond0.105 on the traffic genenator, port is the configurable port which is the listening port as setup on http1.1 goserver, default vaule is 10001
+- Final UriAddressList looks like "0:http://<HTTP_URI_LIST_IPV4>"
+- HTTP_URI_LIST_IPV6
+    Only defined as <TG_BOND105_ipv6>:<port> for primary URI, <TG_BOND105_ipv6> is the ipv6 address of bond0.105 on the traffic genenator, port is the configurable port which is the listening port as setup on http1.1 goserver, default vaule is 10001 ,and need have [] for IPV6 address
+- Final UriAddressList looks like 
+      "0:http://<[HTTP_URI_LIST_IPV6]>"
+- if IS_IPV6=TRUE,this attributes will be populated
+
+16. UDM HTTP2 SERVER URI
+- HTTP2_URI_LIST_IPV4
+    Only defined as <TG_BOND105_ip>:<port> for primary URI, <TG_BOND105_ip> is the ip address of bond0.105 on the traffic genenator, port is the configurable port which is the listening port as setup on http2.0 goserver, default vaule is 10002
+- HTTP2_URI_LIST_IPV6
+    Only defined as <TG_BOND105_ipv6>:<port> for primary URI, <TG_BOND105_ipv6> is the ip address of bond0.105 on the traffic genenator, port is the configurable port which is the listening port as setup on http2.0 goserver, default vaule is 10002 ,and need have [] for IPV6 address
+
+- if IS_IPV6=TRUE,this attributes will be populated
+- HTTP2_TLSMODE
+    0 as cleartext, 1 as mTls, 2 as simple Tls
+- Final UriAddressList looks like "0:http://<HTTP2_URI_LIST>$<HTTP2_TLSMODE>$<TG_BOND105_ip>"
+- SC_IP_ADDRESS_IPV4
+    IP address of Active SC, it is used not only for HTTP2 when HTTP2_TLSMODE is 1 or 2, but for LOGM,LDAPS
+- SC_IP_ADDRESS_IPV6
+    IPV6 address of Active SC, it is used not only for HTTP2 when HTTP2_TLSMODE is 1 or 2, but for LOGM,LDAPS
+
+17. NGHTTPX PROXY certificate installation
+ - Only support HTTP2_TLSMODE is 1 or 2, then these attributes will be used:
+    if IS_IPV6=FALSE, use
+        PROXY_BACKEND_IP_ADDRESS_IPV4
+        PROXY_OAM_IP_ADDRESS_IPV4
+    if IS_IPV6=TRUE, use
+        PROXY_BACKEND_IP_ADDRESS_IPV6
+        PROXY_OAM_IP_ADDRESS_IPV4
+
+18. MAXOUTGOINGCONNECTIONS
+- HTTP_MAXOUTGOINGCONNECTIONS (After HSS version 1.39, this parameter HTTP_MAXOUTGOINGCONNECTIONS is deleted)
+    Define maxOutgoingConnections for http1.1, default value is 12
+- HTTP2_MAXOUTGOINGCONNECTIONS
+    Define maxOutgoingConnections for http2.0, default value is 12
+
+19. Scripts under certificate
+- Four scripts generate_certificateChain.sh,install_hss_certificate.expect, install_udm_certificate.expect and install_proxy_certificate.expect under certificate folder are internal scripts used for certificate generation and installation
+- If certificate related files created on http2.0 goserver under /opt/hss/certificate folder with personal user or hss_st account, please manually remove them before re-population since telorb common user will replace user own account instead
+- Certificate related files created on nghttpx proxy server are under /opt/hss/certificate folder with hss_est account
+
+20. Number of intermediate certificates needed for HTTP2.0 TLS CA Chain, default is only one intermediate certificate needed, used for HSS, UDM and NGHTTPX PROXY. In no intermediate certificate is needed, the value can be set as "0". The range for HSS supported intermediate certificates is from 0 to 10.
+HSS_INTERMEDIATE_DEPTH=1
+UDM_INTERMEDIATE_DEPTH=1
+PROXY_INTERMEDIATE_DEPTH=1
+
+21. Way to encryption from 32bit to 64bit, if you want to test 64bit, you should to contact TCM to install 64bit key file.
+The parameter of encryption way bit64 has been enabled by the configuration "SHA256_RSA4906" valued "TRUE"
+SHA256_RSA4906=TRUE
+
+22. RSYSLOG LOG AUTO STREAMING ACTICATION, if set to TRUE, that means to enable log auto streaming function, by default its value is set to FALSE
+LOG_STREAM_AUTO=FALSE
+
+23. Number of intermediate certificates needed for LDAP TLS CA Chain, default is only one intermediate certificate needed, used for HSS and GTLA/CUDB LDAPS. In no intermediate certificate is needed, the value can be set as "0". The range for HSS supported intermediate certificates is from 0 to 10.
+HSSLDAPS_INTERMEDIATE_DEPTH=1
+EXTDBLDAPS_INTERMEDIATE_DEPTH=1
+
+24. HSS LDAPS configuration removal, HSS & GTLA/CUDB LDAPS certificate generations and HSS & GTLA LDAPS certificate installations
+- The script remove_hss_ldaps.expect is used to remove the old ldaps configuration on HSS node
+- The script generate_ldaps_certificateChain.sh is used to generate the ldaps certificates for HSS & GTLA/CUDB. When the parameter CUDB set as TRUE which means EXTDB type is CUDB, the necessary CUDB ldaps certificates will be generated and compressed as extdbCertificate.tar under the current ST_Population_Netconf/certificate folder 
+- The script install_hss_ldaps_certificate.expect is used to install the ldaps certificates on HSS node
+- The script install_extdb_certificate.expect is used to install the GTLA certificates on GTLA, it is called when the parameter CUDB set as FALSE by default. The GTLA ldaps certificates CAldapscert.pem, extdb.key & extdb.crt will be installed under /etc/openldap/certs by root user. They are included in /etc/openldap/slapd.conf which will be initiated by openldap service restart. For LDAPS MTLS, TLSVerifyClient is set as demand in /etc/openldap/slapd.conf, for LDAPS TLS, TLSVerifyClient is set as Allow in /etc/openldap/slapd.conf. They are also automated in this script
+- CUDB ldaps certificate installation and configuration is not covered in the current scripts
+
+25. ENABLE_HSS_UDM_HTTP1=TRUE (After HSS version 1.39, ENABLE_HSS_UDM_HTTP1 is deleted)
+- This configuration is used to control if http1.1 client and http1.1 server are needed.
+- If not need, you can set it to FALSE. Then UDM SERVER URI will be ignored.
+- Default value is TRUE, means that http1.1 is needed, and you should set UDM SERVER URI correctly.
+- The script remove_hss_http1_client.expect is used to remove http1.1 configuration when HSS as http client.
+- The script remove_hss_http1_server.expect is used to remove http1.1 configuration when HSS as http server
+
+26. MPV_OWNGTADDRESS
+- This parameter will be configured in both HLR and AVG

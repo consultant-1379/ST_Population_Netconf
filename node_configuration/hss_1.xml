@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <applicationName>HSS_ISMSDA</applicationName>
+      <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+        <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+        <HSS-ServiceIndicationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+          <hss-ServiceIndicationContainerId>HSS-ServiceIndication</hss-ServiceIndicationContainerId>
+          <HSS-ServiceIndication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ServiceIndicationId>ServiceId1</hss-ServiceIndicationId>
+            <hss-MaximumDataSizeTd>262144</hss-MaximumDataSizeTd>
+          </HSS-ServiceIndication>
+          <HSS-ServiceIndication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ServiceIndicationId>ServiceId2</hss-ServiceIndicationId>
+          </HSS-ServiceIndication>
+          <HSS-ServiceIndication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ServiceIndicationId>ServiceId3</hss-ServiceIndicationId>
+          </HSS-ServiceIndication>
+        </HSS-ServiceIndicationContainer>
+        <HSS-ChargingContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+          <hss-ChargingContainerId>HSS-Charging</hss-ChargingContainerId>
+        </HSS-ChargingContainer>
+        <HSS-RoamingConfiguration xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+          <hss-RoamingConfigId>HSS-RoamingConfiguration</hss-RoamingConfigId>
+          <HSS-NetworkAccess xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-NetworkAccessTypeId>3GPP-UTRAN-FDD</hss-NetworkAccessTypeId>
+            <hss-AccessType>MOBILE</hss-AccessType>
+          </HSS-NetworkAccess>
+          <HSS-NetworkAccess xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-NetworkAccessTypeId>adsl2\2B</hss-NetworkAccessTypeId>
+            <hss-AccessType>FIXED</hss-AccessType>
+          </HSS-NetworkAccess>
+          <HSS-NetworkAccess xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-NetworkAccessTypeId>adsl2</hss-NetworkAccessTypeId>
+            <hss-AccessType>FIXED</hss-AccessType>
+          </HSS-NetworkAccess>
+          <HSS-NetworkAccess xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-NetworkAccessTypeId>adsl</hss-NetworkAccessTypeId>
+            <hss-AccessType>FIXED</hss-AccessType>
+          </HSS-NetworkAccess>
+        </HSS-RoamingConfiguration>
+      </HSS-ConfigurationContainer>
+    </HSS-IsmSdaApplication>
+  </HSS-Function>
+</ManagedElement>

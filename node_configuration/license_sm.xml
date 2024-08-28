@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+
+<HSS-SmApplication xmlns="urn:com:ericsson:ecim:hss_sm_mim"><applicationName>HSS_SM</applicationName>
+
+<HSS-SmLicense xmlns="urn:com:ericsson:ecim:hss_sm_mim"><hss-SmLicenseId>HSS-SmLicense</hss-SmLicenseId>
+
+<hss-SmIsActive>true</hss-SmIsActive>
+
+</HSS-SmLicense>
+
+</HSS-SmApplication>
+
+</HSS-Function>
+
+</ManagedElement>
+
+

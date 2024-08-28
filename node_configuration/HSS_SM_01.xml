@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+
+<HSS-SmApplication xmlns="urn:com:ericsson:ecim:hss_sm_mim"><applicationName>HSS_SM</applicationName>
+
+<hss-SmNodeIdentity>Node 1</hss-SmNodeIdentity>
+
+<HSS-SmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_sm_mim"><hss-SmConfigurationContainerId>HSS-SmConfigurationContainer</hss-SmConfigurationContainerId>
+
+<HSS-SmSessionInfoClientContainer xmlns="urn:com:ericsson:ecim:hss_sm_mim"><hss-SmSessionInfoClientContainerId>HSS-SmSessionInfoClientContainer</hss-SmSessionInfoClientContainerId>
+
+<HSS-SmSessionInfoClient xmlns="urn:com:ericsson:ecim:hss_sm_mim"><hss-SmClientDiameterHostId>hss.ericsson.se</hss-SmClientDiameterHostId>
+
+<hss-SmClientDiameterRealm>ericsson.se</hss-SmClientDiameterRealm>
+
+</HSS-SmSessionInfoClient>
+
+</HSS-SmSessionInfoClientContainer>
+
+</HSS-SmConfigurationContainer>
+
+</HSS-SmApplication>
+
+</HSS-Function>
+
+</ManagedElement>
+
+

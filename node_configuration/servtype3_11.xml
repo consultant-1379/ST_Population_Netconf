@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+    <applicationName>HSS_ISMSDA</applicationName>
+    <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+      <HSS-ServiceTypeContainer>
+        <hss-ServiceTypeContainerId>HSS-ServiceTypeContainer</hss-ServiceTypeContainerId>
+        <HSS-ServiceType>
+          <hss-ServiceTypeId>DSAI</hss-ServiceTypeId>
+          <HSS-ServiceProfile xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ServiceProfileId>dsai</hss-ServiceProfileId>
+            <hss-DefaultApplicationServer>sip:dsai.ericsson.se;lr</hss-DefaultApplicationServer>
+            <hss-DsaiCapability>true</hss-DsaiCapability>
+            <hss-Trigger2ApplicationServers>911:sip\:dsai.ericsson.se;lr;call=orig;transport=tcp:</hss-Trigger2ApplicationServers>
+          </HSS-ServiceProfile>
+        </HSS-ServiceType>
+      </HSS-ServiceTypeContainer>
+    </HSS-ConfigurationContainer>
+  </HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

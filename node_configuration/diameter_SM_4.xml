@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+
+<DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim"><applicationName>DIA</applicationName>
+
+<DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim"><stackContainerId>HSS_SM</stackContainerId>
+
+<DIA-CFG-PeerNodeContainer xmlns="urn:com:ericsson:ecim:dia_mim"><peerNodeContainerId>HSS_SM</peerNodeContainerId>
+
+<DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim"><nodeId>hss.ericsson.se\23HSS_SM</nodeId>
+
+<ipAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_TCP</ipAddressesList>
+
+<initiateConnection>false</initiateConnection>
+
+<transportLayerType>1</transportLayerType>
+
+</DIA-CFG-NeighbourNode>
+
+</DIA-CFG-PeerNodeContainer>
+
+</DIA-CFG-StackContainer>
+
+</DIA-CFG-Application>
+
+</HSS-Function>
+
+</ManagedElement>
+
+

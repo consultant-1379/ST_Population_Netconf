@@ -1,0 +1,596 @@
+#!/usr/bin/expect
+set RSYSLOG_SERVER_IP_ADDRESS [lindex $argv 0]
+set SC1_IP_ADDRESS [lindex $argv 1]
+set User [lindex $argv 2]
+set Password [lindex $argv 3]
+set UserRoot [lindex $argv 4]
+set RootPassword [lindex $argv 5]
+set timeout 300
+set User1 hss_est
+set Password1 hss_est
+set CERTIFICATE_INSTALL_PATH /home/sec/certificates 
+set CERTIFICATE_INSTALL_PATH_1 /home/system-oam/hssadministrator
+set CERTIFICATE_PATH /etc/ssl/private
+
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User1@$RSYSLOG_SERVER_IP_ADDRESS:$CERTIFICATE_PATH/logserver_ca.tar /tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$RSYSLOG_SERVER_IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User1@$RSYSLOG_SERVER_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password1\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password1\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+
+puts "User:$User"
+puts "SC1_IP_ADDRESS:$SC1_IP_ADDRESS" 
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no /tmp/logserver_ca.tar $User@$SC1_IP_ADDRESS:/tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$SC1_IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$SC1_IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+    }
+
+    timeout { exit 1 }
+}
+expect "*SC-* " {
+    send "su - $UserRoot \r"
+
+} timeout {
+  puts "timeout sudo root\n"
+  exit 1
+}
+expect "*assword: " {
+    send "$RootPassword\r"
+
+} timeout {
+  puts "timeout input password\n"
+  exit 1
+}
+expect "*SC-* " {
+    send "cd $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout cd\n"
+  exit 1
+}
+expect "*SC-* " {
+   send "mv /tmp/logserver_ca.tar $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout when cp file\n"
+  exit 1
+}
+expect "*SC-* " {
+   send "tar -xvf logserver_ca.tar\r"
+
+} timeout {
+  puts "timeout when untar \n"
+  exit 1
+}
+expect "*SC-* " {
+   send "rm -rf testclient_request.csr \r"
+
+} timeout {
+  puts "timeout when remove file\n"
+  exit 1
+}
+
+expect "*SC-* " {
+   send "ll \r"
+
+} timeout {
+  puts "list certificate\n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "su - SystemSecurityAdministrator \r"
+} timeout {
+
+  puts "timeout su SystemSecurityAdministrator\n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "/opt/com/bin/cliss\r"
+} timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+}
+
+expect ">" {
+    send "configure\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(config)>" {
+    send "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1 \r"
+} timeout {
+
+    puts "timeout while enter ManagedElement \n"
+    exit 1
+}
+
+expect "(config-CertM=1)>" {
+    send "NodeCredential=2\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=2)>" {
+    send "subjectName=\"C=SE,O=Ericsson,CN=$RSYSLOG_SERVER_IP_ADDRESS\"\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=2)>" {
+    send "keyInfo=RSA_2048\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=2)>" {
+    send "commit\r"
+} timeout {
+
+    puts "timeout while commit \n"
+    exit 1
+}
+
+expect "(NodeCredential=2)>" {
+    send "startOfflineCsrEnrollment --uri testclient_request.csr\r"
+} timeout {
+
+    puts "timeout while start Offline Csr Enrollment\n"
+    exit 1
+}
+
+expect "true" {
+    send "exit\r"
+} timeout {
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "*SC-* " {
+    send "exit\r"
+} timeout {
+
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "*SC-* " {
+    sleep 20
+    send "openssl x509 -req -in testclient_request.csr -CA logserver_ca.pem -CAkey logserver_ca-key.pem -CAcreateserial -out client_cert.pem -days 1000\r"
+} timeout {
+
+    puts "timeout while generating certificate\n"
+    exit 1
+}
+expect "*SC-* " {
+    send "openssl dgst -c -hex -sha224 ./client_cert.pem\r"
+} timeout {
+
+    puts "timeout while generating SHA224 \n"
+    exit 1
+}
+
+expect -re "(= )(.*)"
+set hssFingerPrint $expect_out(2,string)
+
+expect "*SC-* " {
+    send "openssl dgst -c -hex -sha224 ./logserver_ca.pem\r"
+} timeout {
+
+    puts "timeout while generating SHA224 \n"
+    exit 1
+}
+
+expect -re "(= )(.*)"
+set rootCaFingerPrint $expect_out(2,string)
+
+expect "*SC-* " {
+    send "cp ./client_cert.pem $CERTIFICATE_INSTALL_PATH_1\r"
+} timeout {
+
+  puts "timeout cp client_cert.pem \n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "cp ./logserver_ca.pem $CERTIFICATE_INSTALL_PATH_1\r"
+} timeout {
+
+  puts "timeout cp logserver_ca.pem \n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "chmod 644 $CERTIFICATE_INSTALL_PATH_1/client_cert.pem\r"
+} timeout {
+
+  puts "timeout chmod client_cert.pem \n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "chmod 644 $CERTIFICATE_INSTALL_PATH_1/logserver_ca.pem\r"
+} timeout {
+
+  puts "timeout chmod logserver_ca.pem \n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "su - SystemSecurityAdministrator\r"
+} timeout {
+
+  puts "timeout su SystemSecurityAdministrator \n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "/opt/com/bin/cliss\r"
+} timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+}
+
+expect ">" {
+    send "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,NodeCredential=2\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(NodeCredential=2)>" {
+    send "installCredentialFromUri --uri sftp://$User@$SC1_IP_ADDRESS/$CERTIFICATE_INSTALL_PATH_1/client_cert.pem --uriPassword $Password --fingerprint $hssFingerPrint\r"
+} timeout {
+
+    puts "timeout while install credential \n"
+    exit 1
+}
+
+expect "(NodeCredential=2)>" {
+    sleep 20
+    send "show\r"
+} timeout {
+
+    puts "timeout while show \n"
+    exit 1
+}
+
+expect "result=SUCCESS* " {
+
+} timeout {
+
+    puts "timeout while waiting result \n"
+    exit 1
+}
+
+expect "(NodeCredential=2)>*" {
+    send "up\r"
+} timeout {
+
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "(CertM=1)>" {
+    send "installTrustedCertFromUri --uri sftp://$User@$SC1_IP_ADDRESS/$CERTIFICATE_INSTALL_PATH_1/logserver_ca.pem --uriPassword $Password --fingerprint $rootCaFingerPrint\r"
+} timeout {
+
+    puts "timeout while install Trusted \n"
+    exit 1
+}
+expect "(CertM=1)>" {
+    sleep 20
+    send "show\r"
+} timeout {
+
+    puts "timeout while show \n"
+    exit 1
+}
+
+expect "result=SUCCESS* " {
+
+} timeout {
+
+    puts "timeout while waiting result \n"
+    exit 1
+}
+
+expect "(CertM=1)>" {
+    send "configure\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(config-CertM=1)>" {
+    send "show|filter TrustedCertificate\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+    expect "(config-CertM=1)>"
+    set output $expect_out(buffer)
+    set wordList [regexp -inline -all -- {\S+} $output]
+    set old 0
+    foreach i $wordList {
+       set result [regexp {^TrustedCertificate=(\d+)} $i match zzz]
+       if { $result > 0 } {
+          set match
+          if { $zzz > $old } {
+           set old $zzz 
+          }
+       }
+    }
+    set trustCertificatesStr "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,TrustedCertificate=$old"
+
+    send "TrustCategory=aroma\r"
+
+expect "(config-TrustCategory=aroma)>" {
+    send "trustedCertificates=$trustCertificatesStr\r"      
+} timeout {
+    puts "timeout while show \n"
+    exit 1
+}
+expect "(config-TrustCategory=aroma)>" {
+    send "commit\r"      
+} timeout {
+    puts "timeout while commit \n"
+    exit 1
+}
+expect "(TrustCategory=aroma)>" {
+    send "show\r"
+} timeout {    
+    puts "timeout while waiting result \n"
+    exit 1
+}
+expect "*trustedCertificates*" {
+    send "exit\r"
+} timeout {
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "*SC-* " {
+    send "exit\r"
+} timeout {
+
+  puts "timeout while exit\n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "su - com-emergency\r"
+} timeout {
+
+  puts "timeout su com-emergency\n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "/opt/com/bin/cliss\r"
+} timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+}
+expect ">" {
+    send "configure\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(config)>" {
+    send "ManagedElement=jambala,SystemFunctions=1,LogM=1,RemoteLogServer=security\r"
+} timeout {
+
+    puts "timeout while enter ManagedElement \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=security)>" {
+    send "nodeCredential=\"ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,NodeCredential=2\"\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=security)>" {
+    send "trustCategory=\"ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,TrustCategory=aroma\"\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=security)>" {
+    send "uri=$RSYSLOG_SERVER_IP_ADDRESS:10514\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=security)>" {
+    send "commit\r"
+} timeout {
+    puts "timeout while commit \n"
+    exit 1
+}
+
+expect "(RemoteLogServer=security)>" {
+    send "up\r"
+} timeout {
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "(LogM=1)>" {
+    send "RemoteLogServer=regular\r"
+} timeout {
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(RemoteLogServer=regular)>" {
+    send "config\r"
+} timeout {
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=regular)>" {
+    send "nodeCredential=\"ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,NodeCredential=2\"\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=regular)>" {
+    send "trustCategory=\"ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,TrustCategory=aroma\"\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=regular)>" {
+    send "uri=$RSYSLOG_SERVER_IP_ADDRESS:10514\r"
+} timeout {
+
+    puts "timeout while config \n"
+    exit 1
+}
+
+expect "(config-RemoteLogServer=regular)>" {
+    send "commit\r"
+} timeout {
+    puts "timeout while commit \n"
+    exit 1
+}
+
+expect "(RemoteLogServer=regular)>" {
+    send "exit\r"
+} timeout {
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "*SC-* " {
+    send "exit\r"
+} timeout {
+
+    puts "timeout while exit sc1 \n"
+    exit 1
+}
+
+expect "logout*" {
+} timeout {
+
+    puts "timeout while exit sc1 \n"
+    exit 1
+}
+
+exit 0

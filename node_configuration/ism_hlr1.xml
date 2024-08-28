@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:FunctionMOM"><applicationName>HSS_FUNCTION</applicationName>
+<HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><applicationName>HSS_ISMSDA</applicationName>
+<HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+<HSS-ServicesSupportContainer xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-ServicesSupportContainerId>HSS-ServicesSupportContainer</hss-ServicesSupportContainerId>
+<HSS-InstallationSupport xmlns="urn:com:ericsson:ecim:IsmSdaMOM"><hss-InstallationSupportId>HSS-InstallationSupport</hss-InstallationSupportId>
+<hss-MapStandardVersion>ITU</hss-MapStandardVersion>
+</HSS-InstallationSupport>
+</HSS-ServicesSupportContainer>
+</HSS-ConfigurationContainer>
+</HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

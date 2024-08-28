@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HTTP-Application xmlns="urn:com:ericsson:ecim:http_mim">
+      <applicationName>HTTP</applicationName>
+      <HTTP-PeerServiceConfig xmlns="urn:com:ericsson:ecim:http_mim">
+        <peerServiceId>UDMHttp2</peerServiceId>
+          <ipAddress>UDM_IP_ON_HSS</ipAddress>
+          <uriAddressList>HTTP_CLIENT_LIST</uriAddressList>
+          <peerInstIdList>HTTP2_URI$54804518-4191-4453-569c-ac631f74765c</peerInstIdList>
+          <maxOutgoingConnections>HTTP2_MAXOUTGOINGCONNECTIONS</maxOutgoingConnections>
+        </HTTP-PeerServiceConfig>
+      </HTTP-Application>
+  </HSS-Function>
+</ManagedElement>

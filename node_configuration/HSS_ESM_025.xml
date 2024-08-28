@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+
+        <HSS-EsmScefContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmScefContainerId>HSS-EsmScefContainer</hss-EsmScefContainerId>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef01</hss-EsmScefName>
+            <hss-EsmScefId>scef1.ericsson.com</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.com</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef02</hss-EsmScefName>
+            <hss-EsmScefId>scef2.ericsson.com</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.com</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef0</hss-EsmScefName>
+            <hss-EsmScefId>scef0.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef1</hss-EsmScefName>
+            <hss-EsmScefId>scef1.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef2</hss-EsmScefName>
+            <hss-EsmScefId>scef2.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef3</hss-EsmScefName>
+            <hss-EsmScefId>scef3.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef4</hss-EsmScefName>
+            <hss-EsmScefId>scef4.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef5</hss-EsmScefName>
+            <hss-EsmScefId>scef5.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef6</hss-EsmScefName>
+            <hss-EsmScefId>scef6.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef7</hss-EsmScefName>
+            <hss-EsmScefId>scef7.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef8</hss-EsmScefName>
+            <hss-EsmScefId>scef8.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef9</hss-EsmScefName>
+            <hss-EsmScefId>scef9.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef10</hss-EsmScefName>
+            <hss-EsmScefId>scef10.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+
+          <HSS-EsmScef xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmScefName>scef11</hss-EsmScefName>
+            <hss-EsmScefId>scef11.ericsson.se</hss-EsmScefId>
+            <hss-EsmScefRealm>ericsson.se</hss-EsmScefRealm>
+          </HSS-EsmScef>
+        </HSS-EsmScefContainer>
+
+        <HSS-EsmMtcProfileContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmMtcProfileContainerId>HSS-EsmMtcProfileContainer</hss-EsmMtcProfileContainerId>
+          <HSS-EsmMtcEventProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmMtcEventProfileId>HSS-EsmMtcProfile1</hss-EsmMtcEventProfileId>
+            <hss-EsmAvailabilityAfterDdnFailureEventAllow>true</hss-EsmAvailabilityAfterDdnFailureEventAllow>
+            <hss-EsmCommunicationFailureEventAllow>true</hss-EsmCommunicationFailureEventAllow>
+            <hss-EsmLocationReportingEventAllow>true</hss-EsmLocationReportingEventAllow>
+            <hss-EsmLossOfConnectivityEventAllow>true</hss-EsmLossOfConnectivityEventAllow>
+            <hss-EsmUeReachabilityEventAllow>true</hss-EsmUeReachabilityEventAllow>
+            <hss-EsmChangeOfImsiImeiSvAssociationEventAllow>true</hss-EsmChangeOfImsiImeiSvAssociationEventAllow>
+            <hss-EsmRoamingStatusEventAllow>true</hss-EsmRoamingStatusEventAllow>
+          </HSS-EsmMtcEventProfile>
+
+          <HSS-EsmMtcEventProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmMtcEventProfileId>HSS-EsmMtcProfile2</hss-EsmMtcEventProfileId>
+            <hss-EsmAvailabilityAfterDdnFailureEventAllow>false</hss-EsmAvailabilityAfterDdnFailureEventAllow>
+            <hss-EsmCommunicationFailureEventAllow>false</hss-EsmCommunicationFailureEventAllow>
+            <hss-EsmLocationReportingEventAllow>false</hss-EsmLocationReportingEventAllow>
+            <hss-EsmLossOfConnectivityEventAllow>false</hss-EsmLossOfConnectivityEventAllow>
+            <hss-EsmUeReachabilityEventAllow>false</hss-EsmUeReachabilityEventAllow>
+            <hss-EsmChangeOfImsiImeiSvAssociationEventAllow>false</hss-EsmChangeOfImsiImeiSvAssociationEventAllow>
+            <hss-EsmRoamingStatusEventAllow>false</hss-EsmRoamingStatusEventAllow>
+          </HSS-EsmMtcEventProfile>
+
+          <HSS-EsmMtcDeviceTriggerProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmMtcDeviceTriggerProfileId>HSS-EsmProfile_DevTrig</hss-EsmMtcDeviceTriggerProfileId>
+            <hss-EsmDeviceTriggerAllowedScsList>123456</hss-EsmDeviceTriggerAllowedScsList>
+            <hss-EsmDeviceTriggerAllowedScsList>123456a</hss-EsmDeviceTriggerAllowedScsList>
+            <hss-EsmDeviceTriggerAllowedScsList>123456#</hss-EsmDeviceTriggerAllowedScsList>
+          </HSS-EsmMtcDeviceTriggerProfile>
+
+          <HSS-EsmMtcDeviceTriggerProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmMtcDeviceTriggerProfileId>HSS-EsmDefaultDeviceTriggerProfile</hss-EsmMtcDeviceTriggerProfileId>
+            <hss-EsmDeviceTriggerAllowedScsList>654321</hss-EsmDeviceTriggerAllowedScsList>
+            <hss-EsmDeviceTriggerAllowedScsList>654321a</hss-EsmDeviceTriggerAllowedScsList>
+            <hss-EsmDeviceTriggerAllowedScsList>654321#</hss-EsmDeviceTriggerAllowedScsList>
+          </HSS-EsmMtcDeviceTriggerProfile>
+
+          <HSS-EsmMtcEventProfile xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+           <hss-EsmMtcEventProfileId>HSS-EsmProfile_S6n</hss-EsmMtcEventProfileId>
+          </HSS-EsmMtcEventProfile>
+        </HSS-EsmMtcProfileContainer>
+  
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

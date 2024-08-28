@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmTenantContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmTenantContainerId>HSS-EsmTenantContainer</hss-EsmTenantContainerId>
+          <HSS-EsmTenantConfiguration xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmTenantConfigurationId>1</hss-EsmTenantConfigurationId>
+            <HSS-EsmTenantRoamingConfiguration xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+               <hss-EsmTenantRoamingConfigurationId>1</hss-EsmTenantRoamingConfigurationId>
+               <HSS-EsmTenantPlmn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+                  <hss-EsmTenantPlmnId>262280</hss-EsmTenantPlmnId>
+                  <hss-EsmTenantPlmnIsHome>false</hss-EsmTenantPlmnIsHome>
+                  <hss-EsmTenantPlmnRegServRest>true</hss-EsmTenantPlmnRegServRest>
+               </HSS-EsmTenantPlmn>
+               <HSS-EsmTenantPlmn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+                  <hss-EsmTenantPlmnId>262290</hss-EsmTenantPlmnId>
+                  <hss-EsmTenantPlmnIsHome>false</hss-EsmTenantPlmnIsHome>
+                  <hss-EsmTenantPlmnRegServRest>true</hss-EsmTenantPlmnRegServRest>
+               </HSS-EsmTenantPlmn>
+            </HSS-EsmTenantRoamingConfiguration>
+          </HSS-EsmTenantConfiguration>
+          <HSS-EsmTenantConfiguration xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmTenantConfigurationId>2</hss-EsmTenantConfigurationId>
+            <HSS-EsmTenantRoamingConfiguration xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+               <hss-EsmTenantRoamingConfigurationId>2</hss-EsmTenantRoamingConfigurationId>
+               <HSS-EsmTenantPlmn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+                  <hss-EsmTenantPlmnId>272290</hss-EsmTenantPlmnId>
+                  <hss-EsmTenantPlmnIsHome>false</hss-EsmTenantPlmnIsHome>
+                  <hss-EsmTenantPlmnRegServRest>true</hss-EsmTenantPlmnRegServRest>
+               </HSS-EsmTenantPlmn>
+            </HSS-EsmTenantRoamingConfiguration>
+          </HSS-EsmTenantConfiguration>
+        </HSS-EsmTenantContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

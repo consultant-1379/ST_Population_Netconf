@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmServicesSupportContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmServicesSupportContainerId>HSS-EsmServicesSupportContainer</hss-EsmServicesSupportContainerId>
+          <HSS-EsmInstallationSupport xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmInstallationSupportId>HSS-EsmInstallationSupport</hss-EsmInstallationSupportId>
+            <hss-EsmAuthenticationVectorSupplier>AVG</hss-EsmAuthenticationVectorSupplier>
+          </HSS-EsmInstallationSupport>
+        </HSS-EsmServicesSupportContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

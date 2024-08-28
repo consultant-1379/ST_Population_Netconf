@@ -1,0 +1,195 @@
+#!/usr/bin/expect
+set SC1_IP_ADDRESS [lindex $argv 0]
+set User [lindex $argv 1]
+set Password [lindex $argv 2]
+
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$SC1_IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+    }
+
+    timeout { exit 1 }
+    }
+    expect "*SC-* " {
+        send "/opt/com/bin/cliss\r"
+    } timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+    }
+    expect ">" { 
+        send "ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer\r"
+    } timeout {
+    
+        puts "timeout while enter ManagedElement \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+        send "show ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer | filter HSS-CommonIMSISeries=26228000011$ \r"
+    } timeout {
+    
+        puts "timeout while configure \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+    set output $expect_out(buffer)
+    set wordList [regexp -inline -all -- {\S+} $output]
+    foreach i $wordList {
+    set result [regexp {^HSS-CommonIMSISeries=26228000011$} $i match zzz]
+    if { $result == 1 } {
+        send "configure\r"
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "no HSS-CommonIMSISeries=26228000011\r"
+        } timeout {
+            puts "timeout while configure \n"
+            exit 1
+        }
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "commit \r"
+            } timeout {
+            puts "timeout while configure \n"
+            exit 1
+            }
+        expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+        break
+    } else {
+        puts "no matched result"
+    }
+    }
+    send "exit\r"
+	expect "*SC-* " {
+        send "/opt/com/bin/cliss\r"
+    } timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+    }
+    expect ">" { 
+        send "ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer\r"
+    } timeout {
+    
+        puts "timeout while enter ManagedElement \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+        send "show ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer | filter HSS-CommonIMSISeries=26228000076$ \r"
+    } timeout {
+    
+        puts "timeout while configure \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+    set output2 $expect_out(buffer)
+    set wordList2 [regexp -inline -all -- {\S+} $output2]
+    foreach j $wordList2 {
+    set result2 [regexp {^HSS-CommonIMSISeries=26228000076$} $j match2 zzzzz]
+    if { $result2 == 1 } {
+        send "configure\r"
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "no HSS-CommonIMSISeries=26228000076\r"
+        } timeout {
+            puts "timeout while configure \n"
+            exit 1
+        }
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "commit \r"
+            } timeout {
+            puts "timeout while configure \n"
+            exit 1
+            }
+        expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+        break
+    } else {
+        puts "no matched result"
+    }
+    }
+    send "exit\r"
+	
+	expect "*SC-* " {
+        send "/opt/com/bin/cliss\r"
+    } timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+    }
+    expect ">" { 
+        send "ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer\r"
+    } timeout {
+    
+        puts "timeout while enter ManagedElement \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+        send "show ManagedElement=jambala,HSS-Function=HSS_FUNCTION,HSS-Common=HSS_Common,HSS-CommonConfigurationContainer=HSS-CommonConfigurationContainer,HSS-CommonServicesSupportContainer=HSS-CommonServicesSupportContainer,HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer | filter HSS-CommonIMSISeries=26228000077$ \r"
+    } timeout {
+    
+        puts "timeout while configure \n"
+        exit 1
+    }
+    expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+    set output3 $expect_out(buffer)
+    set wordList3 [regexp -inline -all -- {\S+} $output3]
+    foreach k $wordList3 {
+    set result3 [regexp {^HSS-CommonIMSISeries=26228000077$} $k match3 zzzzzz]
+    if { $result3 == 1 } {
+        send "configure\r"
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "no HSS-CommonIMSISeries=26228000077\r"
+        } timeout {
+            puts "timeout while configure \n"
+            exit 1
+        }
+        expect "(config-HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>" {
+            send "commit \r"
+            } timeout {
+            puts "timeout while configure \n"
+            exit 1
+            }
+        expect "(HSS-CommonIMSISeriesContainer=HSS-CommonIMSISeriesContainer)>"
+        break
+    } else {
+        puts "no matched result"
+    }
+    }
+    send "exit\r"
+    expect "*SC-* " {
+        send "exit\r"
+    } timeout {
+        puts "timeout while exit sc1 \n"
+        exit 1
+    }
+
+    expect "logout*" {
+    } timeout {
+
+        puts "timeout while exit sc1 \n"
+        exit 1
+    }
+
+exit 0
+
+

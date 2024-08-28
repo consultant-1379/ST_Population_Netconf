@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <applicationName>HSS_ISMSDA</applicationName>
+      <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+        <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+        <HSS-ChargingContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+          <hss-ChargingContainerId>HSS-Charging</hss-ChargingContainerId>
+          <HSS-ChargingProfile xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-ChargingProfId>HSS-ChargingProfile1</hss-ChargingProfId>
+            <hss-PrimaryCcf>aaa://CS.epk.ericsson.se:3867;transport=tcp</hss-PrimaryCcf>
+            <hss-SecondaryCcf>aaa://CS.epk.ericsson.se:3867;transport=tcp</hss-SecondaryCcf>
+            <hss-PrimaryEcf>aaa://CS.epk.ericsson.se:3867;transport=tcp</hss-PrimaryEcf>
+            <hss-SecondaryEcf>aaa://CS.epk.ericsson.se:3867;transport=tcp</hss-SecondaryEcf>
+          </HSS-ChargingProfile>
+        </HSS-ChargingContainer>
+      </HSS-ConfigurationContainer>
+    </HSS-IsmSdaApplication>
+  </HSS-Function>
+</ManagedElement>

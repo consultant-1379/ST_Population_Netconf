@@ -1,0 +1,326 @@
+#!/usr/bin/expect
+set SC1_IP_ADDRESS [lindex $argv 0]
+set SC1_IP_ADDRESS_1 [lindex $argv 1]
+set User [lindex $argv 2]
+set Password [lindex $argv 3]
+set CERTIFICATE_PATH [lindex $argv 4]
+set timeout 300
+set CERTIFICATE_INSTALL_PATH /home/system-oam/hssadministrator/certificate 
+ 
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $CERTIFICATE_PATH/hssCertificate.tar $User@$SC1_IP_ADDRESS_1:/tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$SC1_IP_ADDRESS
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+    }
+
+    timeout { exit 1 }
+}
+expect "*SC-* " {
+    send "mkdir -p $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout mkdir\n"
+  exit 1
+}
+expect "*SC-* " {
+    send "cd $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout cd\n"
+  exit 1
+}
+expect "*SC-* " {
+   send "mv /tmp/hssCertificate.tar $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout when cp file\n"
+  exit 1
+}
+expect "*SC-* " {
+   send "tar -xvf hssCertificate.tar \r"
+
+} timeout {
+  puts "timeout when untar \n"
+  exit 1
+}
+expect "*SC-* " {
+   send "ll \r"
+
+} timeout {
+  puts "list certificate\n"
+  exit 1
+}
+expect "*SC-* " {
+    send "openssl dgst -c -hex -sha224 ./hssCertificate/hss_cert.p12\r"
+} timeout {
+
+    puts "timeout while generating SHA224 \n"
+    exit 1
+}
+
+expect -re "(= )(.*)"
+set hssFingerPrint $expect_out(2,string)
+
+expect "*SC-* " {
+    send "openssl dgst -c -hex -sha224 ./hssCertificate/RootCA_HSS.pem\r"
+} timeout {
+
+    puts "timeout while generating SHA224 \n"
+    exit 1
+}
+
+expect -re "(= )(.*)"
+set rootCaFingerPrint $expect_out(2,string)
+
+expect "*SC-* " {
+    send "su - SystemSecurityAdministrator\r"
+} timeout {
+
+    puts "timeout while unlock sc1 \n"
+    exit 1
+}
+expect "*assword:*" {
+    send "hsstest\r"
+
+} timeout {
+  puts "timeout su SystemSecurityAdministrator\n"
+  exit 1
+}
+
+expect "*SC-* " {
+    send "/opt/com/bin/cliss\r"
+} timeout {
+
+    puts "timeout while entering cliss \n"
+    exit 1
+}
+
+expect ">" {
+    send "configure\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(config)>" {
+    send "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1 \r"
+} timeout {
+
+    puts "timeout while enter ManagedElement \n"
+    exit 1
+}
+
+expect "(config-CertM=1)>" {
+    send "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,NodeCredential=HSS\r"
+} timeout {
+
+    puts "timeout while enter ManagedElement \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=HSS)>" {
+    send "commit -s\r"
+} timeout {
+
+    puts "timeout while commit \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=HSS)>" {
+    send "installCredentialFromUri --uri sftp://$User@$SC1_IP_ADDRESS_1/$CERTIFICATE_INSTALL_PATH/hssCertificate/hss_cert.p12 --uriPassword $Password --credentialPassword 123456 --fingerprint $hssFingerPrint\r"
+} timeout {
+
+    puts "timeout while install credential \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=HSS)>" {
+    sleep 20
+    send "show\r"
+} timeout {
+
+    puts "timeout while show \n"
+    exit 1
+}
+
+expect "result=SUCCESS* " {
+
+} timeout {
+
+    puts "timeout while waiting result \n"
+    exit 1
+}
+
+expect "(config-NodeCredential=HSS)>*" {
+    send "end\r"
+} timeout {
+
+    puts "timeout while end \n"
+    exit 1
+}
+
+expect "(NodeCredential=HSS)>*" {
+    send "up\r"
+} timeout {
+
+    puts "timeout while exit \n"
+    exit 1
+}
+
+expect "(CertM=1)>" {
+    send "installTrustedCertFromUri --uri sftp://$User@$SC1_IP_ADDRESS_1/$CERTIFICATE_INSTALL_PATH/hssCertificate/RootCA_HSS.pem --uriPassword $Password --fingerprint $rootCaFingerPrint\r"
+
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(CertM=1)>" {
+    sleep 20
+    send "show\r"
+} timeout {
+
+    puts "timeout while show \n"
+    exit 1
+}
+
+expect "result=SUCCESS* " {
+
+} timeout {
+
+    puts "timeout while waiting result \n"
+    exit 1
+}
+
+expect "(CertM=1)>" {
+    send "configure\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "(config-CertM=1)>" {
+    send "show|filter TrustedCertificate\r"
+} timeout {
+
+    puts "timeout while configure \n"
+    exit 1
+}
+
+    expect "(config-CertM=1)>"
+    set output $expect_out(buffer)
+    set wordList [regexp -inline -all -- {\S+} $output]
+    set old 0
+    foreach i $wordList {
+       set result [regexp {^TrustedCertificate=(\d+)} $i match zzz]
+       if { $result > 0 } {
+          set match
+          if { $zzz > $old } {
+           set old $zzz 
+          }
+       }
+    }
+    set trustCertificatesStr "ManagedElement=jambala,SystemFunctions=1,SecM=1,CertM=1,TrustedCertificate=$old"
+
+    send "TrustCategory=HssHttp2\r"
+
+expect "(config-TrustCategory=HssHttp2)>" {
+    send "trustedCertificates=$trustCertificatesStr\r"      
+} timeout {
+    puts "timeout while show \n"
+    exit 1
+}
+expect "(config-TrustCategory=HssHttp2)>" {
+    send "commit\r"      
+} timeout {
+    puts "timeout while commit \n"
+    exit 1
+}
+expect "(TrustCategory=HssHttp2)>" {
+    send "show\r"
+} timeout {    
+    puts "timeout while waiting result \n"
+    exit 1
+}
+expect "*trustedCertificates*" {
+    send "exit\r"
+} timeout {
+    puts "timeout while configure \n"
+    exit 1
+}
+
+expect "*SC-* " {
+    send "exit\r"
+} timeout {
+
+  puts "timeout while exit\n"
+  exit 1
+}
+
+expect "logout*" {
+} timeout {
+
+    puts "timeout while exit sc1 \n"
+    exit 1
+}
+
+exit 0
+

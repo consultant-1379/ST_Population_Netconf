@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-AvgApplication xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+      <applicationName>HSS_AVG</applicationName>
+      <HSS-AvgConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+        <hss-AvgConfigurationContainerId>HSS-AvgConfigurationContainer</hss-AvgConfigurationContainerId>
+        <HSS-AvgFSetContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+          <hss-AvgFSetContainerId>HSS-AvgFSetContainer</hss-AvgFSetContainerId>
+          <HSS-AvgFSet xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+            <hss-AvgFSetIndId>11</hss-AvgFSetIndId>
+            <hss-AvgFSetName>Milenage</hss-AvgFSetName>
+            <hss-AvgFSetEncryptedOp>11F9DE48AF2110F0D614E605D01BF510</hss-AvgFSetEncryptedOp>
+            <hss-AvgR1>30</hss-AvgR1>
+            <hss-AvgR2>17</hss-AvgR2>
+            <hss-AvgR3>17</hss-AvgR3>
+            <hss-AvgR4>125</hss-AvgR4>
+            <hss-AvgR5>25</hss-AvgR5>
+          </HSS-AvgFSet>
+          <HSS-AvgFSet xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+            <hss-AvgFSetIndId>1</hss-AvgFSetIndId>
+            <hss-AvgFSetName>Milenage</hss-AvgFSetName>
+            <hss-AvgFSetEncryptedOp>11F9DE48AF2110F0D614E605D01BF510</hss-AvgFSetEncryptedOp>
+          </HSS-AvgFSet>
+        </HSS-AvgFSetContainer>
+        <HSS-AvgA4KeyContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+          <hss-AvgA4KeyContainerId>HSS-AvgA4KeyContainer</hss-AvgA4KeyContainerId>
+          <HSS-AvgA4Key xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+            <hss-AvgA4KeyIndId>1</hss-AvgA4KeyIndId>
+            <hss-AvgEncryptedA4Key>A1EE5608B33AF05470858608D1DE080F</hss-AvgEncryptedA4Key>
+          </HSS-AvgA4Key>
+        </HSS-AvgA4KeyContainer>
+        <HSS-AvgA4KeyDes64Container xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+          <hss-AvgA4KeyDes64ContainerId>HSS-AvgA4KeyDes64Container</hss-AvgA4KeyDes64ContainerId>
+          <HSS-AvgA4KeyDes64 xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+            <hss-AvgA4KeyDes64IndId>1</hss-AvgA4KeyDes64IndId>
+            <hss-AvgEncryptedA4Key>1496A3961FBC3317FF8A0E1034D74B16</hss-AvgEncryptedA4Key>
+          </HSS-AvgA4KeyDes64>
+        </HSS-AvgA4KeyDes64Container>
+        <HSS-AvgReqNodeTypeContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+          <hss-AvgReqNodeTypeContainerId>HSS-AvgReqNodeTypeContainer</hss-AvgReqNodeTypeContainerId>
+        </HSS-AvgReqNodeTypeContainer>
+      </HSS-AvgConfigurationContainer>
+    </HSS-AvgApplication>
+  </HSS-Function>
+</ManagedElement>

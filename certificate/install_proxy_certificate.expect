@@ -1,0 +1,130 @@
+#!/usr/bin/expect
+set REMOTE_TG [lindex $argv 0]
+set PROXY_USER [lindex $argv 1]
+set PROXY_PASSWORD [lindex $argv 2]
+set timeout 30
+set CERTIFICATE_PATH [lindex $argv 3]
+set CERTIFICATE_INSTALL_PATH /opt/hss/certificate
+ 
+spawn scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $CERTIFICATE_PATH/proxyCertificate.tar $PROXY_USER@$REMOTE_TG:/tmp/
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$REMOTE_TG ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $PROXY_USER@$REMOTE_TG
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword:*" {
+                send "$PROXY_PASSWORD\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword:*" {
+        send "$PROXY_PASSWORD\r"
+        sleep 5
+    }
+
+    timeout { exit 1 }
+}
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $PROXY_USER@$REMOTE_TG
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$REMOTE_TG ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $PROXY_USER@$REMOTE_TG
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword:*" {
+                send "$PROXY_PASSWORD\r"
+            }
+
+            timeout { exit 1 }
+        }
+    }
+
+    "*assword:*" {
+        send "$PROXY_PASSWORD\r"
+    }
+
+    timeout { exit 1 }
+}
+expect "*$PROXY_USER@*" {
+    send "mkdir -p $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout mkdir\n"
+  exit 1
+}
+expect "*$PROXY_USER@*" {
+    send "cd $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout cd\n"
+  exit 1
+}
+expect "*$PROXY_USER@*" {
+   send "mv /tmp/proxyCertificate.tar $CERTIFICATE_INSTALL_PATH \r"
+
+} timeout {
+  puts "timeout when mv file\n"
+  exit 1
+}
+expect "*$PROXY_USER@*" {
+   send "tar -xvf proxyCertificate.tar \r"
+
+} timeout {
+  puts "timeout when untar \n"
+  exit 1
+}
+expect "*$PROXY_USER@*" {
+   send "rm -rf proxyCertificate.tar \r"
+
+} timeout {
+  puts "timeout when rm file\n"
+  exit 1
+}
+expect "*$PROXY_USER@*" {
+   send "ls -l \r"
+
+} timeout {
+  puts "list certificate\n"
+  exit 1
+}
+
+expect "*$PROXY_USER@*" {
+    send "exit\r"
+} timeout {
+
+    puts "timeout while exit TG \n"
+    exit 1
+}
+
+expect "logout*" {
+} timeout {
+
+    puts "timeout while logout TG \n"
+    exit 1
+}
+
+exit 0

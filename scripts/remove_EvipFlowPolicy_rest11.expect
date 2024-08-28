@@ -1,0 +1,91 @@
+#!/usr/bin/expect
+set OAM_IP_ADDRESS [lindex $argv 0]
+set User [lindex $argv 1]
+set Password [lindex $argv 2]
+
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$OAM_IP_ADDRESS -p 122
+expect {
+    "Are you sure you want to continue connecting (yes/no)?" {
+        send "yes\r"
+        exp_continue
+    }
+
+    "Host key verification failed." {
+        exec cp -f $env(HOME)/.ssh/known_hosts $env(HOME)/.ssh/known_hosts.bak
+        exec egrep -v "$OAM_IP_ADDRESS ssh-rsa" $env(HOME)/.ssh/known_hosts.bak > $env(HOME)/.ssh/known_hosts
+        # exec rm -rf $env(HOME)/.ssh/known_hosts
+        spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $User@$OAM_IP_ADDRESS -p 122
+        expect {
+            "Are you sure you want to continue connecting (yes/no)?" {
+                send "yes\r"
+                exp_continue
+            }
+            "*assword: " {
+                send "$Password\r"
+            }
+
+            timeout {
+                       puts "ERROR:login failed,delete rest11 failed \n"
+                       exit 1 
+                    }
+        }
+    }
+
+    "*assword: " {
+        send "$Password\r"
+    }
+
+    timeout { 
+                   puts "ERROR:login failed,delete rest11 failed \n"
+                   exit 1 
+            }
+    }
+    expect ">" { 
+        send "ManagedElement=jambala,Transport=1,Evip=1,EvipAlbs=1,EvipAlb=ln_raddia_sc,EvipFlowPolicies=1\r"
+    } timeout {
+    
+        puts "ERROR:timeout while enter ManagedElement,delete rest11 failed \n"
+        exit 1
+    }
+    expect "(EvipFlowPolicies=1)>" {
+        send "show ManagedElement=jambala,Transport=1,Evip=1,EvipAlbs=1,EvipAlb=ln_raddia_sc,EvipFlowPolicies=1 | filter rest11$ \r"
+    } timeout {
+    
+        puts "ERROR:timeout while configure,delete rest11 failed \n"
+        exit 1
+    }
+    expect "(EvipFlowPolicies=1)>"
+    set output $expect_out(buffer)
+    set wordList [regexp -inline -all -- {\S+} $output]
+    foreach i $wordList {
+    set result [regexp {^EvipFlowPolicy=rest11+} $i match zzz]
+    if { $result == 1 } {
+        send "configure\r"
+        expect "(config-EvipFlowPolicies=1)>" {
+            send "no EvipFlowPolicy=rest11\r"
+        } timeout {
+            puts "timeout while configure \n"
+            exit 1
+        }
+        expect "(config-EvipFlowPolicies=1)>" {
+            send "commit \r"
+            } timeout {
+            puts "timeout while configure \n"
+            exit 1
+            }
+        expect "(EvipFlowPolicies=1)>"
+        break
+    } else {
+        puts "no matched result"
+    }
+    }
+    send "exit\r"
+    expect "logout*" {
+    } timeout {
+
+        puts "ERROR:timeout while exit for delete rest11 \n"
+        exit 1
+    }
+
+exit 0
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-ExtDbFunction xmlns="urn:com:ericsson:ecim:hss_extdb_mim">
+      <applicationName>HSS_EXTDB</applicationName>
+      <hss-ExtDbConfigRootDnList>1:ou=Associations,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>2:ou=multiSCs,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>3:dc=impi,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>4:dc=impu,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>5:dc=imsi,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>6:dc=msisdn,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>7:dc=ipaddress,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>8:dc=wimpu,ou=identities,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>9:ou=mscCommonData,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigRootDnList>10:ou=ApplicationCounter,dc=operator,dc=com</hss-ExtDbConfigRootDnList>
+      <hss-ExtDbConfigUrlList>0:ldap://10.50.50.31:389$cn=manager,dc=operator,dc=com$simple</hss-ExtDbConfigUrlList>
+      <hss-ExtDbUrlPasswordList>0:MIL1Int_2</hss-ExtDbUrlPasswordList>
+      <hss-ExtDbConfigLogActive>true</hss-ExtDbConfigLogActive>
+    </HSS-ExtDbFunction>
+  </HSS-Function>
+</ManagedElement>

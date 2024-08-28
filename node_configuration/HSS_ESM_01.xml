@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <hss-EsmNodeIdentity>Node 1</hss-EsmNodeIdentity>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmConfigurationData xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmConfigurationDataId>HSS-EsmConfigurationData</hss-EsmConfigurationDataId>
+          <hss-Esm2g3gCommonMsisdnRetrievalAllowed>true</hss-Esm2g3gCommonMsisdnRetrievalAllowed>
+          <hss-EsmAdministrativeState>Unlocked</hss-EsmAdministrativeState>
+          <hss-EsmMaxSimultaneousRequests>20000</hss-EsmMaxSimultaneousRequests>
+          <hss-EsmOamLogStatus>true</hss-EsmOamLogStatus>
+          <hss-EsmReattemptDelayTime>1001</hss-EsmReattemptDelayTime>
+          <hss-EsmRequestReattempts>4</hss-EsmRequestReattempts>
+          <hss-EsmRoamingServiceRestriction>ENABLED</hss-EsmRoamingServiceRestriction>
+          <hss-EsmSecurityAuditLogStatus>true</hss-EsmSecurityAuditLogStatus>
+          <hss-EsmServicesLogStatus>true</hss-EsmServicesLogStatus>
+          <hss-EsmMapPdpcp>true</hss-EsmMapPdpcp>
+          <hss-EsmProfileIdPrefix>PDPCP</hss-EsmProfileIdPrefix>
+          <hss-EsmTadsMechanism>DATABASE</hss-EsmTadsMechanism>
+          <hss-EsmMultipleSubscriptionOption>Active</hss-EsmMultipleSubscriptionOption>
+          <hss-EsmFilterApnNameList>apn06gnnv01.ericsson.se</hss-EsmFilterApnNameList>
+	  <hss-EsmSendUeUsageTypeInSWx>true</hss-EsmSendUeUsageTypeInSWx>
+        </HSS-EsmConfigurationData>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

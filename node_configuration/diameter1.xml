@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+      <applicationName>DIA</applicationName>
+      <DIA-CFG-Configuration xmlns="urn:com:ericsson:ecim:dia_mim"><configuration>Diameter</configuration>
+        <userDialogueTimeout>2000</userDialogueTimeout>
+      </DIA-CFG-Configuration>
+      <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <stackContainerId>HSS_ISMSDA</stackContainerId>
+         <DIA-CFG-PeerNodeContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+          <peerNodeContainerId>HSS_ISMSDA</peerNodeContainerId>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>Origin0.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>Origin1.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>Origin2.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>Origin3.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>ap5.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>ap6.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>ap7.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>S-CSCF280.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim">
+            <nodeId>S-CSCF290.ericsson.se\23HSS_ISMSDA</nodeId>
+          </DIA-CFG-NeighbourNode>
+          <!--DIA-CFG-NeighbourNode xmlns="urn:com:ericsson:ecim:dia_mim"><nodeId>slf.ericsson.se\23HSS_ISMSDA</nodeId>
+<enabled>true</enabled>
+<initiateConnection>false</initiateConnection>
+</DIA-CFG-NeighbourNode-->
+        </DIA-CFG-PeerNodeContainer>
+        <DIA-CFG-RoutingContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+          <routingContainerId>HSS_ISMSDA</routingContainerId>
+          <DIA-CFG-Drt xmlns="urn:com:ericsson:ecim:dia_mim">
+            <entryId>ericsson.se:HSS_ISMSDA:FALSE</entryId>
+          </DIA-CFG-Drt>
+        </DIA-CFG-RoutingContainer>
+      </DIA-CFG-StackContainer>
+    </DIA-CFG-Application>
+  </HSS-Function>
+</ManagedElement>

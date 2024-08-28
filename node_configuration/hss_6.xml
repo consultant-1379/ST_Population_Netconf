@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-Common xmlns="urn:com:ericsson:ecim:CommonMOM">
+      <applicationName>HSS_Common</applicationName>
+      <HSS-CommonConfigurationContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+        <hss-CommonConfigurationContainerId>HSS-CommonConfigurationContainer</hss-CommonConfigurationContainerId>
+        <HSS-CommonServicesSupportContainer xmlns="urn:com:ericsson:ecim:CommonMOM">
+          <hss-CommonServicesSupportContainerId>HSS-CommonServicesSupportContainer</hss-CommonServicesSupportContainerId>
+          <HSS-CommonServicesSupport xmlns="urn:com:ericsson:ecim:CommonMOM">
+            <hss-CommonServicesSupportId>HSS-CommonServicesSupport</hss-CommonServicesSupportId>
+              <hss-CommonServicesInExtDB>'0000001000000001'B</hss-CommonServicesInExtDB>
+          </HSS-CommonServicesSupport>
+        </HSS-CommonServicesSupportContainer>
+      </HSS-CommonConfigurationContainer>
+    </HSS-Common>
+  </HSS-Function>
+</ManagedElement>

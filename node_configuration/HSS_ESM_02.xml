@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmApnContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmApnContainerId>HSS-EsmApnContainer</hss-EsmApnContainerId>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>1</hss-EsmApnId>
+            <hss-EsmApnName>apn1.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>2</hss-EsmApnId>
+            <hss-EsmApnName>apn2.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>3</hss-EsmApnId>
+            <hss-EsmApnName>apn3.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>11</hss-EsmApnId>
+            <hss-EsmApnName>apn06gnnv01.ericsson.se</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>12</hss-EsmApnId>
+            <hss-EsmApnName>apn12.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>13</hss-EsmApnId>
+            <hss-EsmApnName>apn13.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>15</hss-EsmApnId>
+            <hss-EsmApnName>apn15.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>16</hss-EsmApnId>
+            <hss-EsmApnName>apn16.com</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>17</hss-EsmApnId>
+            <hss-EsmApnName>apn01.epg27.ericsson.se</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>18</hss-EsmApnId>
+            <hss-EsmApnName>apn02.epg27.ericsson.se</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>19</hss-EsmApnId>
+            <hss-EsmApnName>apn03.epg27.ericsson.se</hss-EsmApnName>
+          </HSS-EsmApn>
+          <HSS-EsmApn xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmApnId>20</hss-EsmApnId>
+            <hss-EsmApnName>apn04.epg27.ericsson.se</hss-EsmApnName>
+          </HSS-EsmApn>
+        </HSS-EsmApnContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

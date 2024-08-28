@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim"><applicationName>HSS_FUNCTION</applicationName>
+  <HSS-IsmSdaApplication xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+    <applicationName>HSS_ISMSDA</applicationName>
+    <HSS-ConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+      <hss-ConfigurationContainerId>HSS-ConfigurationContainer</hss-ConfigurationContainerId>
+      <HSS-ServiceTypeContainer>
+        <hss-ServiceTypeContainerId>HSS-ServiceTypeContainer</hss-ServiceTypeContainerId>
+        <HSS-ServiceType xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+          <hss-ServiceTypeId>IP-TV</hss-ServiceTypeId>
+          <HSS-ServiceTrigger xmlns="urn:com:ericsson:ecim:hss_ismsda_mim">
+            <hss-TriggerPriorityId>907</hss-TriggerPriorityId>
+            <hss-IsActive>true</hss-IsActive>
+            <hss-TriggerType>ORIGINATING</hss-TriggerType>
+            <hss-DetectionPoint>REGISTER</hss-DetectionPoint>
+            <hss-NegatedDetectionPoint>false</hss-NegatedDetectionPoint>
+            <hss-ConditionType>OR</hss-ConditionType>
+            <hss-RequestedURI>intranet.ericsson.com</hss-RequestedURI>
+            <hss-NegatedRequestedURI>false</hss-NegatedRequestedURI>
+            <hss-SIPHeaders>FALSE:sip:ericsson.server.se</hss-SIPHeaders>
+            <hss-RegistrationTypes>INITIAL_REGISTRATION</hss-RegistrationTypes>
+          </HSS-ServiceTrigger>
+        </HSS-ServiceType>
+      </HSS-ServiceTypeContainer>
+    </HSS-ConfigurationContainer>
+  </HSS-IsmSdaApplication>
+</HSS-Function>
+</ManagedElement>

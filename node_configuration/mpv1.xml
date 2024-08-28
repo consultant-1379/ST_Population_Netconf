@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop"><managedElementId>1</managedElementId>
+<HSS-Function xmlns="urn:com:ericsson:ecim:FunctionMOM"><applicationName>HSS_FUNCTION</applicationName>
+<MPV-Application xmlns="urn:com:ericsson:ecim:MapMOM"><applicationName>MAP</applicationName>
+<MPV-ImsiToMgt xmlns="urn:com:ericsson:ecim:MapMOM"><mpv-NumberSeriesId>268011111</mpv-NumberSeriesId>
+<mpv-CcNc>351912</mpv-CcNc>
+<mpv-InitialMAPVersion>v3</mpv-InitialMAPVersion>
+</MPV-ImsiToMgt>
+</MPV-Application>
+</HSS-Function>
+</ManagedElement>
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <Transport xmlns="urn:com:ericsson:ecim:ComTop">
+   <transportId>1</transportId>
+    <Evip xmlns="urn:com:ericsson:ecim:EvipMOM">
+    <evipId>1</evipId>
+    <EvipAlbs xmlns="urn:com:ericsson:ecim:EvipMOM">
+     <evipAlbsId>1</evipAlbsId>
+     <EvipAlb xmlns="urn:com:ericsson:ecim:EvipMOM">
+       <evipAlbId>ln_raddia_sc</evipAlbId>
+        <EvipVips xmlns="urn:com:ericsson:ecim:EvipMOM">
+         <evipVipsId>1</evipVipsId>
+           <EvipVip xmlns="urn:com:ericsson:ecim:EvipMOM">
+           <evipVipId>UDM_IP_ON_HSS</evipVipId>
+         </EvipVip>
+        </EvipVips>
+        <EvipFlowPolicies xmlns="urn:com:ericsson:ecim:EvipMOM">
+        <evipFlowPoliciesId>1</evipFlowPoliciesId>
+          <EvipFlowPolicy xmlns="urn:com:ericsson:ecim:EvipMOM">
+          <evipFlowPolicyId>rest20</evipFlowPolicyId>
+             <protocol>tcp</protocol>
+             <targetPool>PLs_tcp</targetPool>
+             <destPort>CLEARTEXT_PORT</destPort>
+             <dest>UDM_IP_ON_HSS</dest>
+          </EvipFlowPolicy>
+          <EvipFlowPolicy xmlns="urn:com:ericsson:ecim:EvipMOM">
+          <evipFlowPolicyId>rest21</evipFlowPolicyId>
+             <protocol>tcp</protocol>
+             <targetPool>PLs_tcp</targetPool>
+             <destPort>TLS_PORT</destPort>
+             <dest>UDM_IP_ON_HSS</dest>
+          </EvipFlowPolicy>
+        </EvipFlowPolicies>
+    </EvipAlb>
+   </EvipAlbs>
+  </Evip>
+ </Transport>
+</ManagedElement>

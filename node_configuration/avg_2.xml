@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-AvgApplication xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+      <applicationName>HSS_AVG</applicationName>
+      <HSS-AvgConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+        <hss-AvgConfigurationContainerId>HSS-AvgConfigurationContainer</hss-AvgConfigurationContainerId>
+        <HSS-AvgReqNodeTypeContainer xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+          <hss-AvgReqNodeTypeContainerId>HSS-AvgReqNodeTypeContainer</hss-AvgReqNodeTypeContainerId>
+          <HSS-AvgUsimReqNodeType xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+            <hss-AvgUsimReqNodeTypeId>AAA</hss-AvgUsimReqNodeTypeId>
+            <hss-AvgInitialIndValue>1</hss-AvgInitialIndValue>
+            <hss-AvgEndIndValue>5</hss-AvgEndIndValue>
+          </HSS-AvgUsimReqNodeType>
+        </HSS-AvgReqNodeTypeContainer>
+      </HSS-AvgConfigurationContainer>
+    </HSS-AvgApplication>
+  </HSS-Function>
+</ManagedElement>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-AvgApplication xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+      <applicationName>HSS_AVG</applicationName>
+      <HSS-AvgLicense xmlns="urn:com:ericsson:ecim:hss_avg_mim">
+        <hss-AvgLicenseId>HSS-AvgLicense</hss-AvgLicenseId>
+        <hss-AvgIsActive>true</hss-AvgIsActive>
+      </HSS-AvgLicense>
+    </HSS-AvgApplication>
+  </HSS-Function>
+</ManagedElement>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <HSS-EsmApplication xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+      <applicationName>HSS_ESM</applicationName>
+      <HSS-EsmConfigurationContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+        <hss-EsmConfigurationContainerId>HSS-EsmConfigurationContainer</hss-EsmConfigurationContainerId>
+        <HSS-EsmApnConfigContainer xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+          <hss-EsmApnConfigContainerId>HSS-EsmApnConfigContainer</hss-EsmApnConfigContainerId>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>1</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>1</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>4</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>2</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>2</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>4</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>3</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>3</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>4</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>11</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>11</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>5</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+            <hss-EsmIwk5GSIndicator>SUBSCRIBED</hss-EsmIwk5GSIndicator>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>12</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>12</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>false</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>13</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>13</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmQosProfileArpPreemptionCapability>Enabled</hss-EsmQosProfileArpPreemptionCapability>
+            <hss-EsmQosProfileArpPreemptionVulnerability>Disabled</hss-EsmQosProfileArpPreemptionVulnerability>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmIpV4StaticPdnGwId>10.42.81.7</hss-EsmIpV4StaticPdnGwId>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>false</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>14</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>0</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmPdnType>IPv4</hss-EsmPdnType>
+            <hss-EsmVplmnAllowed>false</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>15</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>15</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>false</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>16</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>16</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>false</hss-EsmVplmnAllowed>
+          </HSS-EsmApnConfig>
+	    <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>17</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>17</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+            <hss-EsmScefName>scef01</hss-EsmScefName>
+            <hss-EsmNonIpDataDeliveryMechanism>SCEF</hss-EsmNonIpDataDeliveryMechanism>
+            <hss-EsmNIDDValidityDuration>86400</hss-EsmNIDDValidityDuration>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>18</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>18</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+            <hss-EsmScefName>scef01</hss-EsmScefName>
+            <hss-EsmNonIpDataDeliveryMechanism>SCEF</hss-EsmNonIpDataDeliveryMechanism>
+            <hss-EsmNIDDValidityDuration>86400</hss-EsmNIDDValidityDuration>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>19</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>19</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+            <hss-EsmScefName>scef01</hss-EsmScefName>
+            <hss-EsmNonIpDataDeliveryMechanism>SCEF</hss-EsmNonIpDataDeliveryMechanism>
+            <hss-EsmNIDDValidityDuration>86400</hss-EsmNIDDValidityDuration>
+          </HSS-EsmApnConfig>
+          <HSS-EsmApnConfig xmlns="urn:com:ericsson:ecim:hss_esm_mim">
+            <hss-EsmContextId>20</hss-EsmContextId>
+            <hss-EsmAmbrMaxDl>41943030</hss-EsmAmbrMaxDl>
+            <hss-EsmAmbrMaxUl>20971510</hss-EsmAmbrMaxUl>
+            <hss-EsmApnId>20</hss-EsmApnId>
+            <hss-EsmQosProfileArp>2</hss-EsmQosProfileArp>
+            <hss-EsmQosProfileQci>6</hss-EsmQosProfileQci>
+            <hss-EsmEpsBearerChargingChars>1</hss-EsmEpsBearerChargingChars>
+            <hss-EsmNonIpPdnTypeIndicator>true</hss-EsmNonIpPdnTypeIndicator>
+            <hss-EsmVplmnAllowed>true</hss-EsmVplmnAllowed>
+            <hss-EsmScefName>scef02</hss-EsmScefName>
+            <hss-EsmNonIpDataDeliveryMechanism>SCEF</hss-EsmNonIpDataDeliveryMechanism>
+            <hss-EsmNIDDValidityDuration>86400</hss-EsmNIDDValidityDuration>
+          </HSS-EsmApnConfig>
+        </HSS-EsmApnConfigContainer>
+      </HSS-EsmConfigurationContainer>
+    </HSS-EsmApplication>
+  </HSS-Function>
+</ManagedElement>

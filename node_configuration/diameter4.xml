@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+  <managedElementId>1</managedElementId>
+  <HSS-Function xmlns="urn:com:ericsson:ecim:hss_function_mim">
+    <applicationName>HSS_FUNCTION</applicationName>
+    <DIA-CFG-Application xmlns="urn:com:ericsson:ecim:dia_mim">
+      <applicationName>DIA</applicationName>
+      <DIA-CFG-Configuration xmlns="urn:com:ericsson:ecim:dia_mim"><configuration>Diameter</configuration>
+        <userDialogueTimeout>2000</userDialogueTimeout>
+      </DIA-CFG-Configuration>
+      <DIA-CFG-StackContainer xmlns="urn:com:ericsson:ecim:dia_mim">
+        <stackContainerId>HSS_ISMSDA</stackContainerId>
+        <DIA-CFG-OwnNodeConfig xmlns="urn:com:ericsson:ecim:dia_mim">
+          <stackId>HSS_ISMSDA</stackId>
+          <realm>ericsson.se</realm>
+          <portNr>3868</portNr>
+          <supportedVendorsIds>10415</supportedVendorsIds>
+          <supportedVendorsIds>193</supportedVendorsIds>
+          <hostId>hss.ericsson.se</hostId>
+          <productName>Ericsson Diameter</productName>
+          <diaVendorId>193</diaVendorId>
+          <disconnectCause>0</disconnectCause>
+          <ipAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_TCP</ipAddressesList>
+          <sctpAddressesList>OWN_NODE_CONFIG_IP_ADDR_LIST_SCTP</sctpAddressesList>
+          <enabled>true</enabled>
+          <allowConnectFromUnknownNode>true</allowConnectFromUnknownNode>
+          <maxRequestPendingTime>15</maxRequestPendingTime>
+          <watchdogTimeIdle>6</watchdogTimeIdle>
+          <maxNumberOfRetries>0</maxNumberOfRetries>
+          <firmwareRevision>1</firmwareRevision>
+          <tcTimer>10</tcTimer>
+          <supportedVendorSpecificApps>0:10415:16777216:0</supportedVendorSpecificApps>
+          <supportedVendorSpecificApps>1:10415:16777217:0</supportedVendorSpecificApps>
+          <supportedVendorSpecificApps>2:193:16777228:0</supportedVendorSpecificApps>
+          <supportedVendorSpecificApps>3:193:16777227:0</supportedVendorSpecificApps>
+          <supportedVendorSpecificApps>4:10415:16777221:0</supportedVendorSpecificApps>
+          <supportedVendorSpecificApps>5:10415:16777291:0</supportedVendorSpecificApps>
+          <loadRegulationEnabled>true</loadRegulationEnabled>
+          <sendErrorAtOverload>true</sendErrorAtOverload>
+          <transportLayerType>3</transportLayerType>
+        </DIA-CFG-OwnNodeConfig>
+      </DIA-CFG-StackContainer>
+    </DIA-CFG-Application>
+  </HSS-Function>
+</ManagedElement>
